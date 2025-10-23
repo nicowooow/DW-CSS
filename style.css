@@ -1,0 +1,65 @@
+
+/* 
+en pseudo clases se usan los 
+~ : selecciona a todos los elementos hermanos que siguen al elemento seleccionado
++ : selecciona al siguiente elemento hermano del elemento seleccionado
+-- : selecciona al elemento padre del elemento seleccionado
+^ : selecciona al elemento hijo del elemento seleccionado
+* : selecciona a todos los elementos hijos del elemento seleccionado
+$ : selecciona al ultimo elemento hijo del elemento seleccionado
+> : selecciona al primer elemento hijo del elemento seleccionado
+<-- : selecciona al elemento abuelo del elemento seleccionado
+
+*/
+/**
+
+p:hover{background-color: #ff9;}
+p::first-line{
+    font-weight: bold;
+}
+address + p{
+    color: red;
+}
+p:first-child{
+    color: green; 
+    font-family:cursive ;
+}
+p:last-child{
+    color: blue;
+}
+
+body div:last-child{
+    background-color: #ccc;
+}
+
+div {
+    border:3px dotted gray;
+    padding: 10px;
+    margin: 20px;
+}
+
+p:nth-child(2n+0){
+    background-color: #ddd;
+    font-style: italic;
+}
+/* si quieres que sean pares es 2n e impar 2n+1 , el n se considera el numero 0 y
+ de ahi lo cuenta para adelante, si se pone -n va en retroceso (hacia el 0 ) */
+
+ .first-container{
+    display: none;/* block */
+ }
+ .second-container{
+    display: none;
+ }
+ .thirtd-container{
+    display: none;
+ }
+ .fourth-container{
+    display: none;
+ }
+ .fifth-container{
+    display: none;
+ }
+ .sixth-container{
+    display: none;
+ }

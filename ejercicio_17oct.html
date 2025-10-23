@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--  
+    <div>
+        <b>BOLD</b>
+    </div>
+    <br>
+    <div>
+        <address>BOLD</address>
+        <address>hola@gmail.com</address>
+    </div>
+
+    <h1>Contando cosas</h1>
+
+    <style>
+        div {
+            border: 2px solid black;
+            padding: 5vw 6vw 10vw 200px;
+            /* el primero componente es el superior, el segundo el derecho, el tercero el inferior y el cuarto el izquierdo
+             */
+            width: 300px;
+        }
+
+        b {
+            padding: 2vw 3vw 5vw 3vw;
+            border: 2px solid black;
+        }
+
+        address {
+            display: inline-block;
+            border: 2px solid rgb(98, 197, 214);
+            width: 100px;
+
+        }
+
+        b, address{
+            transform: rotate(-10deg);
+        }
+
+        /*
+        la diferencia entre b y address es que b es un elemento inline y address es un elemento block. Por lo tanto b no respeta las propiedades de width y height mientras que address si las respeta
+        */
+    </style>
+-->
+    <div id="gradiantes">
+        <h2>ejer1</h2>
+        <div id="ejer1">
+            <section></section>
+        </div>
+
+        <style>
+            #ejer1 {
+                display: flex;
+                flex-direction: column;
+            }
+
+            #ejer1 section {
+                width: 900px;
+                height: 150px;
+                border: 2px solid black;
+                background-image: linear-gradient(90deg, red, rgb(255, 153, 0), yellow, rgb(17, 255, 0), rgb(0, 247, 255), blue, rgb(255, 0, 255), red);
+
+                /* el linear gradient podemos poner en vez de Xdeg por ejemplo to right, to left, to top, to bottom, to upper right, to lower left, etc
+                  */
+            }
+        </style>
+        <br><br><br>
+
+        <h2>ejer2</h2>
+        <div id="ejer2">
+            <section>
+                <h1>Aquí el título de un tema</h1>
+            </section>
+            <section>
+                <p>Este es un texto introductorio sobre el tema principal. En esta sección se presenta una idea general
+                    para captar la atención del lector, explicando brevemente de qué trata el contenido y por qué es
+                    relevante en el contexto actual.</p>
+
+                <p>El desarrollo del tema comienza con una revisión histórica que permite entender cómo ha evolucionado
+                    a lo largo del tiempo. Se mencionan eventos clave, cambios sociales y tecnológicos que han influido
+                    en su transformación, así como los desafíos que han surgido en el proceso.</p>
+
+                <p>En este párrafo se abordan los aspectos técnicos o conceptuales más importantes. Se explican
+                    definiciones, se analizan teorías relevantes y se presentan ejemplos que ayudan a ilustrar los
+                    puntos tratados. También se incluyen comparaciones entre diferentes enfoques para enriquecer la
+                    comprensión del lector.</p>
+
+                <p>Además, se discuten las implicaciones prácticas del tema en la vida cotidiana, en el ámbito
+                    profesional o en el entorno académico. Se exploran casos reales, aplicaciones concretas y posibles
+                    escenarios futuros que muestran cómo este conocimiento puede ser útil o transformador.</p>
+
+                <p>Finalmente, se concluye con una reflexión que invita al lector a profundizar en el tema, a cuestionar
+                    sus propias ideas y a buscar nuevas perspectivas. Se puede incluir una pregunta abierta, una cita
+                    inspiradora o una propuesta de acción que conecte emocionalmente con el lector y lo motive a seguir
+                    explorando.</p>
+            </section>
+        </div>
+
+        <style>
+            #ejer2 {
+                padding: 50px;
+                background-image: conic-gradient(from 270deg at 50%, red, rgb(255, 153, 0), yellow, rgb(17, 255, 0), rgb(0, 247, 255), blue, rgb(255, 0, 255), red);
+            }
+
+            #ejer2 section {
+                background-color: rgb(255, 255, 255, 0.7);
+            }
+        </style>
+
+        <br><br><br>
+        <h2>ejer3</h2>
+        <div id="ejer3">
+            <section>
+                <h1>La importancia del diseño modular en proyectos web</h1>
+            </section>
+
+            <section>
+                <p>El diseño modular se ha convertido en una práctica esencial en el desarrollo web moderno. Consiste en
+                    dividir el proyecto en componentes independientes y reutilizables, lo que permite una mayor
+                    escalabilidad, mantenibilidad y claridad en el código.</p>
+
+                <p>Una de las principales ventajas del enfoque modular es la facilidad para realizar cambios sin afectar
+                    el resto del sistema. Por ejemplo, si se necesita modificar el estilo de un botón, basta con
+                    actualizar el módulo correspondiente sin temor a romper otras partes del diseño.</p>
+
+                <p>Además, el diseño modular fomenta la colaboración entre equipos. Al tener componentes bien definidos,
+                    los desarrolladores pueden trabajar en paralelo sin interferencias, lo que agiliza el proceso de
+                    desarrollo y reduce errores de integración.</p>
+
+                <p>Desde el punto de vista visual, los módulos permiten mantener una coherencia estética en todo el
+                    sitio. Al definir variables globales, tokens de diseño y convenciones tipográficas, se logra una
+                    armonía que refuerza la identidad del proyecto y mejora la experiencia del usuario.</p>
+
+                <p>En resumen, adoptar un enfoque modular no solo mejora la calidad técnica del código, sino que también
+                    potencia la creatividad, la eficiencia y la sostenibilidad del proyecto a largo plazo. Es una
+                    inversión inteligente para cualquier desarrollador que aspire a construir soluciones robustas y
+                    elegantes.</p>
+            </section>
+
+        </div>
+        <style>
+            #ejer3{
+
+                 padding: 50px;
+                 background-image:
+                 linear-gradient(359deg,rgb(0, 0, 255) 1%,transparent 40%),
+                 linear-gradient(45deg,rgb(0, 255, 0) 40%, transparent 55%),
+                 linear-gradient(159deg,rgb(255, 0, 0) 20%,transparent 60%),
+                 linear-gradient(230deg,rgb(255, 255, 0) 50%,transparent 70%)
+                                ;
+                
+                            }
+            #ejer3 section {
+                width: auto;
+                background-color: rgba(255, 255, 255, 0.595);
+            }
+
+        </style>
+
+        <br><br><br>
+        <h2>ejer4</h2>
+        <div id="ejer4">
+            <img src="https://dww.es/css/001/img/070_Instagram.png" alt="imagen_instagram">
+        </div>
+
+        <style>
+            #ejer4{
+                background-image: 
+                radial-gradient(at 60% 20%,rgb(255, 0, 230),rgb(4, 255, 0),rgb(32, 233, 179)),
+                radial-gradient(at 30px,blue,rgb(255, 85, 0),rgb(255, 153, 0)),
+                radial-gradient(at 80px,blue,rgb(255, 85, 0),rgb(255, 153, 0));
+            
+            }
+            #ejer4 img{
+                width: 100%;
+                height: 100%;
+            }
+        </style>
+
+    </div>
+</body>
+
+</html>

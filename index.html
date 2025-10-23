@@ -1,0 +1,694 @@
+<!Doctype html>
+<html lann='es'>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <title>Practica</title>
+</head>
+
+<body style="background-color: rgb(116, 116, 8);">
+    <div class="first-container">
+        <p>primer hijo del body</p>
+        <p> este es otro texto random<br> este es otro texto random</p>
+        <p> este es otro texto random<br> este es otro texto random</p>
+        <p> este es otro texto random<br> este es otro texto random</p>
+        <div>
+            <p> primer hijo del div</p>
+            <p> este es otro texto random<br> este es otro texto random</p>
+            <p> este es otro texto random<br> este es otro texto random</p>
+            <p> este es otro texto random<br> este es otro texto random</p>
+        </div>
+        <div>
+            <address>@gmail.com</address>
+            <p> este es otro texto random<br> este es otro texto random</p>
+            <p> este es otro texto random<br> este es otro texto random</p>
+            <p> este es otro texto random<br> este es otro texto random</p>
+        </div>
+    </div>
+    <div class="second-container">
+        <p>aca vamos a ver los tipos de especificidad que tienen estos comandos en css</p>
+        <p>
+            <strong>
+                universal = 0
+                <br>elemento = 1
+                <br>clase = 10
+                <br>atributo = 10
+                <br>id = 100
+                <br>importante = 1000
+                <br>inline = 10000
+            </strong>
+            <br>a)Qué especificidad tienen los siguientes selectores:<br>
+            <br> * -> tiene de especificidad 0,0,0,0 porque es un selector universal
+            <br>.rojo -> tiene de especificidad 0,0,1,0 porque es un selector de clase
+            <br> .autos.seat -> tiene de especificidad 0,0,2,0 porque son dos selectores de clase
+            <br> #autos.rojo -> 110 por id+class
+            <br> #autos .rojo -> 110 por id+class
+            <br> #autos > * > .verde -> 110 por id+universal+class
+            <br> p#autos > * > * > span -> 102 por elemento+id+universal+universal( dos veces )+element
+            <br> p -> 1 por elemento
+            <br> div p -> 2 por elemento+elemento
+            <br> div.autos p -> 12 por elemento+class+elemento
+            <br> div#coches p span -> 103 por elem+id+elemento+elemento
+            <br> table -> 1 por elemento
+            <br> td -> 1 por elemento
+            <br> table tr td -> 3 por elemento ( tres veces )
+            <br> table tr td + td -> 4 por elemento ( cuatro veces )
+            <br> td ~ td -> 2 por elemento ( dos veces )
+            <br> table.roja tr -> 12 por elemento+class+elemento
+            <br> table#calles -> 101 por elemento+id
+            <br> table[title] -> 11 por elemento+atributo
+            <br> table[title][lang] -> 21 por elemento+atributo+atributo
+            <br> :nth-child(3) -> 10 por pseudo-clase
+            <br> :last-child -> 10 por pseudo-clase
+            <br> td:nth-child(3) -> 11 por elemento+pseudo-clase
+            <br> table td:nth-child(3) -> 12 por elemento+elemento+pseudo-clase
+            <br> table tr td:nth-child(3) -> 13 por elemento+elemento+elemento+pseudo-clase
+            <br> table.ciudades tr td:nth-child(3) -> 23 por elemento+class+elemento+elemento+pseudo-clase
+            <br> table#calles.ciudades tr td:nth-child(3) -> 123 por elemento+id+class+elemento+elemento+pseudo-clase
+            <br> table { border: 3px inset gray!important; } -> 1000 por importante
+            <br>b) De todos los selectores anteriores, haz un ejemplo donde se vea como se aplican estilos con los
+            selectores en color azul.
+            <br>
+
+        </p>
+
+        <table>
+            <tr>
+                <td>Primero</td>
+                <td>Segundo</td> <!-- Este se selecciona -->
+                <td>Tercero</td>
+            </tr>
+        </table>
+        <!-- 
+        <style>
+            table tr td+td {
+                background-color: yellow;
+            }
+        </style>
+-->
+        <table>
+            <tr>
+                <td>Primero</td>
+                <td>Segundo</td> <!-- Se selecciona -->
+                <td>Tercero</td> <!-- También se selecciona -->
+            </tr>
+        </table>
+        <!-- 
+        <style>
+            td~td {
+                color: red;
+            }
+        </style>
+-->
+        <table title="Listado" lang="es">
+            <tr>
+                <td>Contenido</td>
+            </tr>
+        </table>
+        <!-- 
+        <style>
+            table[title][lang] {
+                border: 2px solid green;
+            }
+        </style>
+
+-->
+        <ul>
+            <li>Uno</li>
+            <li>Dos</li>
+            <li>Tres</li> <!-- Se selecciona -->
+            <li>Cuatro</li>
+        </ul>
+        <!-- 
+        <style>
+            li:nth-child(3) {
+                font-weight: bold;
+            }
+        </style>
+-->
+        <ul>
+            <li>Primero</li>
+            <li>Segundo</li>
+            <li>Último</li> <!-- Se selecciona -->
+        </ul>
+        <!-- 
+        <style>
+            li:last-child {
+                text-decoration: underline;
+            }
+        </style>
+-->
+
+
+    </div>
+    <div class="thirtd-container">
+        <!-- 
+        <style>
+             h3:first-of-type {
+                color: blue;
+                font-size:1.8rem;
+            }
+            h3+p {
+                color: rgb(76, 227, 76);
+                font-weight: bold;
+            }
+
+            section:first-of-type{
+                border: 10px ridge black;
+                background-color: antiquewhite;
+            }
+
+            section:first-of-type h3{
+                color: rgb(249, 0, 249);
+            }
+            section h3:nth-child(n+2):nth-last-child(-n+4) {
+                color: red;
+            }
+            section h3+p {
+                color: rgb(106, 215, 132);
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                font-size: 20px;
+            }
+
+            section h3:nth-child(n+2)+p{
+                font-family: cursive;
+            }
+
+            section p:last-child{
+                font-size: 4px;
+            }
+        </style>
+        -->
+        <h3>Mi primer artículo</h3>
+        <p>Título primero</p>
+        <article>
+            <section>
+                <h3>sección 1ª</h3>
+                <p>introducción 1</p>
+                <p>párrafo uno</p>
+                <p>párrafo dos</p>
+                <p>párrafo tres</p>
+            </section>
+            <section>
+                <h3>sección 2ª</h3>
+                <p>introducción 2</p>
+                <p>párrafo uno</p>
+                <p><b>párrafo dos</b></p>
+                <h3>otras cosas</h3>
+                <p>párrafo tres</p>
+                <p>párrafo cuatro</p>
+            </section>
+            <section>
+                <h3>sección 3ª</h3>
+                <p>introducción 3</p>
+                <p>párrafo uno</p>
+                <p>párrafo dos</p>
+                <h3>otras cosas</h3>
+                <p>párrafo tres</p>
+                <p>párrafo cuatro</p>
+                <p>párrafo cinco</p>
+            </section>
+            <section>
+                <h3>sección 4ª</h3>
+                <p>introducción 4</p>
+                <p>párrafo uno</p>
+                <p><b>párrafo dos</b></p>
+                <p>párrafo tres</p>
+            </section>
+        </article>
+    </div>
+    <div class="fourth-container">
+        <!-- 
+        <style>
+            body,main,article,section,h3,div,p {
+                border: 1px solid black;
+                margin: 10px;
+                padding: 30px;
+            }
+            body{background-color: black;}
+            body>*{
+                background-color: #FDD;
+            }
+            body>*>*{
+                background-color:#DFD;
+            }
+            body>*>*>*{
+                background-color:#DDF;
+            }
+            body>*>*>*>*{
+                background-color:#d5f6c7;
+            }
+            body>*>*>*>*>*{
+                background-color:rgb(234, 221, 255);
+            }
+            body>*>*>*>*>*>* {
+                background-color:rgb(175, 139, 233);
+            }
+            body>*>*>*>*>*>*>* {
+                background-color:rgb(113, 111, 243);
+            }
+            body>*>*>*>*>*>*>*>* {
+                background-color:rgb(243, 214, 111);
+            }
+            body>*>*>*>*>*>*>*>*>* {
+                background-color:rgb(255, 255, 255);
+            }
+        </style>
+-->
+        <main>
+            <header>
+                <h3>Mi primer artículo</h3>
+                <p>Título primero</p>
+            </header>
+            <article>
+                <section>
+                    <h3>SECCIÓN PRINCIPAL</h3>
+                    <h3>Mi primer artículo</h3>
+                    <p>Título primero</p>
+                    <article>
+                        <section>
+                            <h3>sección 1ª</h3>
+                            <p>introducción 1</p>
+                            <p>párrafo uno</p>
+                            <p>párrafo dos</p>
+                            <p>párrafo tres</p>
+                        </section>
+                        <section>
+                            <h3>sección 2ª</h3>
+                            <p>introducción 2</p>
+                            <p>párrafo uno</p>
+                            <p><b>párrafo dos</b></p>
+                            <h3>otras cosas</h3>
+                            <p>párrafo tres</p>
+                            <p>párrafo cuatro</p>
+                        </section>
+                        <section>
+                            <h3>sección 3ª</h3>
+                            <p>introducción 3</p>
+                            <p>párrafo uno</p>
+                            <p>párrafo dos</p>
+                            <h3>otras cosas</h3>
+                            <p>párrafo tres</p>
+                            <p>párrafo cuatro</p>
+                            <p>párrafo cinco</p>
+                        </section>
+                        <section>
+                            <h3>sección 4ª</h3>
+                            <p>introducción 4</p>
+                            <p>párrafo uno</p>
+                            <p><b>párrafo dos</b></p>
+                            <p>párrafo tres</p>
+                        </section>
+                    </article>
+                </section>
+            </article>
+
+            <!-- división -->
+            <div>
+                <h3>Mi segundo artículo</h3>
+                <p>Título segundo</p>
+                <article>
+                    <section>
+                        <h3>SECCIÓN SECUNDARIA</h3>
+                        <h3>Mi primer artículo</h3>
+                        <p>Título primero</p>
+                        <article>
+                            <section>
+                                <h3>sección 1ª</h3>
+                                <p>introducción 1</p>
+                                <p>párrafo uno</p>
+                                <p>párrafo dos</p>
+                                <p>párrafo tres</p>
+                            </section>
+                            <section>
+                                <h3>sección 2ª</h3>
+                                <p>introducción 2</p>
+                                <p>párrafo uno</p>
+                                <p><b>párrafo dos</b></p>
+                                <h3>otras cosas</h3>
+                                <p>párrafo tres</p>
+                                <p>párrafo cuatro</p>
+                            </section>
+                            <section>
+                                <h3>sección 3ª</h3>
+                                <p>introducción 3</p>
+                                <p>párrafo uno</p>
+                                <p>párrafo dos</p>
+                                <h3>otras cosas</h3>
+                                <p>párrafo tres</p>
+                                <p>párrafo cuatro</p>
+                                <p>párrafo cinco</p>
+                            </section>
+                            <section>
+                                <h3>sección 4ª</h3>
+                                <p>introducción 4</p>
+                                <p>párrafo uno</p>
+                                <p><b>párrafo dos</b></p>
+                                <p>párrafo tres</p>
+                            </section>
+                        </article>
+                    </section>
+                </article>
+            </div>
+        </main>
+        <footer>
+            <p>Pie de documento.</p>
+        </footer>
+        <aside>
+            <menu>
+                <li><a href="#">Algún sitio web</a></li>
+                <li><a href="#">Algún otro sitio web</a></li>
+                <li><a href="#">Y otro sitio más</a></li>
+            </menu>
+        </aside>
+    </div>
+    <div class="fifth-container">
+        <!-- 
+        <style>
+            table {
+                border-collapse: collapse;
+                /* Para que las celdas se toquen */
+                font-size: 60px;
+                /* Tamaño grande para las piezas */
+                text-align: center;
+                border: 3px solid #333;
+            }
+
+            td {
+                width:90px;
+                height:90px;
+                padding: 0;
+                line-height: 60px;
+                /* Centra verticalmente las piezas */
+                font-weight: bold;
+                /* Hace la notación más visible */
+                font-family: Arial, sans-serif;
+                position: relative;
+                border: 3px solid #333;
+
+            }
+
+            tr {
+                border: 3px solid #333;
+
+            }
+
+            /* 1. Filas PARES (tr:2n) / Columnas IMPARES (td:2n+1) -> OSCURO */
+            tr:nth-child(2n)>td:nth-child(2n+1) {
+                background-color: #B58863;
+            }
+
+            /* 2. Filas PARES (tr:2n) / Columnas PARES (td:2n) -> CLARO */
+            tr:nth-child(2n)>td:nth-child(2n) {
+                background-color: #F0D9B5;
+            }
+
+            /* 3. Filas IMPARES (tr:2n+1) / Columnas IMPARES (td:2n+1) -> CLARO */
+            tr:nth-child(2n+1)>td:nth-child(2n+1) {
+                background-color: #F0D9B5;
+            }
+
+            /* 4. Filas IMPARES (tr:2n+1) / Columnas PARES (td:2n) -> OSCURO */
+            tr:nth-child(2n+1)>td:nth-child(2n) {
+                background-color: #B58863;
+            }
+        </style>
+        -->
+        <table>
+            <tr>
+                <td>&#9820;</td>
+                <td>&#9822;</td>
+                <td>&#9821;</td>
+                <td>&#9819;</td>
+                <td>&#9818;</td>
+                <td>&#9821;</td>
+                <td>&#9822;</td>
+                <td>&#9820;</td>
+            </tr>
+            <tr>
+                <td>&#9823;</td>
+                <td>&#9823;</td>
+                <td>&#9823;</td>
+                <td>&#9823;</td>
+                <td>&#9823;</td>
+                <td>&#9823;</td>
+                <td>&#9823;</td>
+                <td>&#9823;</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>&#9817;</td>
+                <td>&#9817;</td>
+                <td>&#9817;</td>
+                <td>&#9817;</td>
+                <td>&#9817;</td>
+                <td>&#9817;</td>
+                <td>&#9817;</td>
+                <td>&#9817;</td>
+            </tr>
+            <tr>
+                <td>&#9814;</td>
+                <td>&#9816;</td>
+                <td>&#9815;</td>
+                <td>&#9813;</td>
+                <td>&#9812;</td>
+                <td>&#9815;</td>
+                <td>&#9816;</td>
+                <td>&#9814;</td>
+            </tr>
+        </table>
+
+    </div>
+    <div class="sixth-container">
+        <!--    
+        <style>
+            ol>li:first-child,
+            ol>li:last-child {
+                background-color: yellow;
+            }
+
+            ol>li:nth-child(n+2):nth-child(-n+5) {
+                background-color: aqua;
+            }
+
+            ol>li:nth-child(n+6):nth-child(-n+9) {
+                background-color: rgb(255, 160, 77);
+            }
+        </style>
+        -->
+        <h1>Juego de Tronos</h1>
+        <ol>
+            <li>Se acerca el invierno.</li>
+            <li>Un Lannister siempre paga sus deudas.</li>
+            <li>El hombre que teme a la derrota ya ha sido derrotado.</li>
+            <li>Eres más inteligente de lo que te conviene.</li>
+            <li>El león no se molesta con las opiniones de las ovejas.</li>
+            <li>Lord Janos, yo no cuestiono vuestro honor… Yo niego su
+                existencia.</li>
+            <li>Una reina que no confía en nadie es tan tonta como una
+                reina que confía en todo el mundo.</li>
+            <li>El odio es bueno si nos hace seguir adelante.</li>
+            <li>No es fácil estar borracho todo el tiempo. Si fuera fácil,
+                todos lo harían.</li>
+            <li>¿Qué le decimos al Dios de la muerte? Hoy no!.</li>
+        </ol>
+    </div>
+    <div class="seventh-container">
+        <!-- 
+        <style>
+            table {
+                border-collapse: collapse;
+            }
+
+            td {
+                height: 3rem;
+                width: 3rem;
+                border: 1px solid black;
+            }
+
+            tr:nth-child(n):nth-child(-n+5)>td:nth-child(n):nth-child(-n+5) {
+                background-color: aqua;
+            }
+
+            tr:nth-child(n):nth-child(-n+5)>td:nth-child(n+6):nth-child(-n+10) {
+                background-color: rgb(255, 166, 0);
+            }
+            
+            tr:nth-child(n+6):nth-child(-n+10)>td:nth-child(n):nth-child(-n+5) {
+                background-color: rgb(255, 97, 226);
+            }
+
+            tr:nth-child(n+6):nth-child(-n+10)>td:nth-child(n+6):nth-child(-n+10) {
+                background-color: rgb(0, 255, 42);
+            }
+            </style>
+-->
+        <table>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+
+    </div>
+    <div class="eigth-container"></div>
+</body>
+
+</html>

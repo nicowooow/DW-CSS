@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10 octubre</title>
+</head>
+
+<body>
+    <h2>canal alfa</h2>
+    <p>¿Cuál de los siguientes formatos de imagen tiene canal alfa? <br>
+        - .png ✅<br>
+        - .jpg<br>
+        - .avif ✅<br>
+        - .gif ✅<br>
+        - .webp ✅<br>
+        - .bmp</p>
+
+    <h2></h2>
+    <p>En la figura ves una cuadrícula con casillas blancas y negras y un cilindro que sombra sobre ellas. <br>
+
+        a) ¿Qué color tienen las 4 casillas negras que no reciben sombra? <br>
+        b) ¿Y la casilla blanca central? <br>
+    </p>
+    <img src="https://dww.es/css/001/img/055_test-Adelson.png" alt="ilusion_optica">
+    <p>
+        a) Las 4 casillas "negras" que no reciben sombra tienen un color idéntico al de la casilla "blanca" central que
+        sí recibe sombra. Ambas son el mismo tono de gris en la imagen digital. <br>
+
+        b) La casilla "blanca" central tiene un color idéntico al de las 4 casillas "negras" que no reciben sombra.
+        Ambas son el mismo tono de gris.
+    </p>
+    <h2>saca el color intermedio de los dos colores de los costados</h2>
+    <table class="tres_colores">
+        <tr><td></td> <td></td> <td></td></tr>
+    </table>
+    <style>
+        :root{
+            /*
+            esto no funciona porquer el calc no funciona con variables que contengan una operacion matematica no con numeros puros
+BUENOOOO YA ME FUNBCIONO Y NO SE PORQUE 
+
+
+            con esto sacaremos el color azul*/
+            --r-color1:0;
+            --g-color1:0;
+            --b-color1:255;
+            --color1: rgb(var(--r-color1),var(--g-color1),var(--b-color1));
+            /*con esto sacaremos el color amarillo conbinando el rojo y verde*/
+            --r-color2:255;
+            --g-color2:255;
+            --b-color2:0;
+            --color2: rgb(var(--r-color2),var(--g-color2),var(--b-color2));;
+            /*aca sacaremos las variables para sacar sus colores intermedios...
+            
+            var(--r-color1)+
+var(--g-color1)+
+var(--b-color1)+
+            
+            */
+            --r-mid:calc(((var(--r-color2) + var(--r-color1))/2));
+            --g-mid:calc(((var(--g-color2) + var(--g-color1))/2));
+            --b-mid:calc(((var(--b-color2) + var(--b-color1))/2));
+            
+            --color-mid: rgb(var(--r-mid),var(--g-mid),var(--b-mid));
+        }
+        .tres_colores{
+            border-collapse: collapse;
+            border: 1px solid black;
+            width: 120px;
+            height: 70px;
+        }
+
+        .tres_colores td{
+            width: 40px;
+            height: 70px;
+            border: 1px solid black;
+        }
+
+        .tres_colores tr td:nth-child(1){
+            background-color: var(--color1);
+        }
+        
+        .tres_colores tr td:nth-child(2){
+            background-color: var(--color-mid);
+        }   
+
+        .tres_colores tr td:nth-child(3){
+            background-color: var(--color2);
+        }
+
+        </style>
+
+        <h2>Ejercicio 4 : Gradiente</h2>
+        <table class="gradiente">
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <style>
+        :root{
+            --r-incio:215;
+            --g-incio:123;
+            --b-incio:255;
+            --color-inicio: rgb(var(--r-incio),var(--g-incio),var(--b-incio));
+            --r-fin:255;
+            --g-fin:87;
+            --b-fin:120;
+            --color-fin: rgb(var(--r-fin),var(--g-fin),var(--b-fin));
+
+            --color-mid-grad: color-mix(in lch, var(--color1) 50%, var(--color2));
+
+        /* Definición del gradiente horizontal de 3 puntos */
+        --gradient: linear-gradient(
+            to right,
+            var(--color1) 0%,        /* Azul al inicio */
+            var(--color-mid) 50%,    /* Color intermedio al centro */
+            var(--color2) 100%       /* Amarillo al final */
+        );
+        }
+        
+        .gradiente{
+            border-collapse: collapse;
+            border: 1px solid black;
+            width: 1200px;
+            height: 30px;
+        }
+
+        .gradiente td{
+            width: 40px;
+            height: 70px;
+            border: 1px solid black;
+        }
+
+        .gradiente tr td:first-child{
+            background-color: var(--color-incio);
+        }
+        .gradiente tr td:last-child{
+            background-color: var(--color-fin);
+        }
+        
+        .gradiente tr td:nth-child(1) {
+  background-color: var(--color-inicio);
+}
+
+.gradiente tr td:nth-child(2) {
+  background-color: color-mix(in srgb, var(--color-inicio) 90%, var(--color-fin));
+}
+.gradiente tr td:nth-child(3) {
+  background-color: color-mix(in srgb, var(--color-inicio) 80%, var(--color-fin));
+}
+.gradiente tr td:nth-child(4) {
+  background-color: color-mix(in srgb, var(--color-inicio) 70%, var(--color-fin));
+}
+.gradiente tr td:nth-child(5) {
+  background-color: color-mix(in srgb, var(--color-inicio) 60%, var(--color-fin));
+}
+.gradiente tr td:nth-child(6) {
+  background-color: color-mix(in srgb, var(--color-inicio) 50%, var(--color-fin));
+}
+.gradiente tr td:nth-child(7) {
+  background-color: color-mix(in srgb, var(--color-inicio) 40%, var(--color-fin));
+}
+.gradiente tr td:nth-child(8) {
+  background-color: color-mix(in srgb, var(--color-inicio) 30%, var(--color-fin));
+}
+.gradiente tr td:nth-child(9) {
+  background-color: color-mix(in srgb, var(--color-inicio) 20%, var(--color-fin));
+}
+.gradiente tr td:nth-child(10) {
+  background-color: color-mix(in srgb, var(--color-inicio) 10%, var(--color-fin));
+}
+
+.gradiente tr td:nth-child(11) {
+  background-color: var(--color-fin);
+}
+
+
+
+        </style>
+</body>
+
+</html>

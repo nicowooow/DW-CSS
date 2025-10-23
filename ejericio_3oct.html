@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="first">
+        <style>
+            td {
+                border: 3px outset black;
+                width: 100%;
+            }
+
+            th {
+                border: 3px outset black;
+
+            }
+
+            td>img {
+                padding: 0;
+                content: none;
+            }
+
+            td {
+                width: 100px;
+                height: 60px;
+                text-align: center;
+                background-color: brown;
+            }
+
+            #img_cast {
+                padding-top: 20px;
+                padding-bottom: 20px;
+                padding-left: 2px;
+                padding-right: 2px;
+                background-color: transparent;
+                content: none;
+            }
+
+            img {
+                width: 100%;
+                object-fit: cover;
+            }
+
+            tr:nth-child(1)>td {
+                background-color: rgb(127, 127, 127);
+            }
+        </style>
+        <table style="background-color: rgb(144, 144, 144);">
+            <tr>
+                <caption style="font-size: 40px;">Segovia</caption>
+            </tr>
+            <tr>
+                <td colspan="5">el alcazar o un castillo random</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td id="img_cast" rowspan="5" colspan="3">
+                    <img src="https://www.infobae.com/resizer/v2/HJBF3WK5JNEUDHEMVDVMFVTS2E.jpg?auth=24669a4ece78c838fb73349cdc9b8ba82a98f2db8dd0c81e04c20d5218782d9a&smart=true&width=992&height=744&quality=85"
+                        alt="imagen castillo">
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+
+
+            <!-- se tiene 8 filas  y 5 columnas-->
+        </table>
+    </div>
+
+    <div id="second">
+        <h2>colspan rowspan</h2>
+
+        <table style="border:1px solid black;" class="ejer2">
+            <tr>
+                <td rowspan="4"></td>
+                <td colspan="5"></td>
+            </tr>
+            <tr>
+                <td rowspan="2"></td>
+                <td colspan="2"></td>
+                <td rowspan="3"></td>
+                <td rowspan="4"></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-jfTE35Msw74eYHohLXE_qZlmqw8GZPg7UQ&s"
+                        alt="castillo" width="60">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+                <td colspan="5"></td>
+            </tr>
+        </table>
+
+        <style>
+            .ejer2 tr td {
+                background-color: beige;
+            }
+        </style>
+    </div>
+    <div id="tirhd">
+        <h2>estilizar filas</h2>
+        <table>
+            <caption>Números del 1 al 10</caption>
+            <tr>
+                <td>Español</td>
+                <td>uno</td>
+                <td>dos</td>
+                <td>tres</td>
+                <td>cuatro</td>
+                <td>cinco</td>
+                <td>seis</td>
+                <td>siete</td>
+                <td>ocho</td>
+                <td>nueve</td>
+                <td>diez</td>
+            </tr>
+            <tr>
+                <th>Portugués</th>
+                <td>um</td>
+                <td>dois</td>
+                <td>três</td>
+                <td>quatro</td>
+                <td>cinco</td>
+                <td>seis</td>
+                <td>sete</td>
+                <td>oito</td>
+                <td>nove</td>
+                <td>dez</td>
+            </tr>
+            <tr>
+                <th>Italiano</th>
+                <td>uno</td>
+                <td>due</td>
+                <td>tre</td>
+                <td>quattro</td>
+                <td>cinque</td>
+                <td>sei</td>
+                <td>sette</td>
+                <td>otto</td>
+                <td>nove</td>
+                <td>dieci</td>
+            </tr>
+            <tr>
+                <th>Francés</th>
+                <td>un</td>
+                <td>deux</td>
+                <td>trois</td>
+                <td>quatre</td>
+                <td>cinq</td>
+                <td>six</td>
+                <td>sept</td>
+                <td>huit</td>
+                <td>neuf</td>
+                <td>dix</td>
+            </tr>
+            <tr>
+                <th>Inglés</th>
+                <td>one</td>
+                <td>two</td>
+                <td>three</td>
+                <td>four</td>
+                <td>five</td>
+                <td>six</td>
+                <td>seven</td>
+                <td>eight</td>
+                <td>nine</td>
+                <td>ten</td>
+            </tr>
+            <tr>
+                <th>Alemán</th>
+                <td>eins</td>
+                <td>zwei</td>
+                <td>drei</td>
+                <td>vier</td>
+                <td>fünf</td>
+                <td>sechs</td>
+                <td>sieben</td>
+                <td>acht</td>
+                <td>neun</td>
+                <td>zehn</td>
+            </tr>
+            <tr>
+                <th>Chino</th>
+                <td>一</td>
+                <td>二</td>
+                <td>三</td>
+                <td>四</td>
+                <td>五</td>
+                <td>六</td>
+                <td>七</td>
+                <td>八</td>
+                <td>九</td>
+                <td>十</td>
+            </tr>
+        </table>
+        <style>
+            #tirhd table {
+                border-collapse: collapse;
+            }
+
+            #tirhd table tr:nth-child(1) td,
+            #tirhd table tr:nth-child(1) th {
+                background-color: azure;
+            }
+
+            #tirhd table tr:nth-child(n+2):nth-child(-n+4) td,
+            #tirhd table tr:nth-child(n+2):nth-child(-n+4) th {
+                background-color: rgb(227, 217, 124);
+            }
+
+            #tirhd table tr:nth-child(n+5):nth-child(-n+6) td,
+            #tirhd table tr:nth-child(n+5):nth-child(-n+6) th {
+                background-color: rgb(254, 141, 239);
+            }
+
+            #tirhd table tr:nth-child(n+7):nth-child(-n+7) td,
+            #tirhd table tr:nth-child(n+7):nth-child(-n+7) th {
+                background-color: rgb(128, 226, 226);
+            }
+        </style>
+    </div>
+
+    <div id="fourth">
+        <table>
+            <caption>Números del 1 al 10</caption>
+            <tr>
+                <td>Español</td>
+                <td>Portugués</td>
+                <td>Italiano</td>
+                <td>Francés</td>
+                <td>Inglés</td>
+                <td>Alemán</td>
+                <td>Chino</td>
+            </tr>
+            <tr>
+                <td>uno</td>
+                <td>um</td>
+                <td>uno</td>
+                <td>un</td>
+                <td>one</td>
+                <td>eins</td>
+                <td>一</td>
+            </tr>
+            <tr>
+                <td>dos</td>
+                <td>dois</td>
+                <td>due</td>
+                <td>deux</td>
+                <td>two</td>
+                <td>zwei</td>
+                <td>二</td>
+            </tr>
+            <tr>
+                <td>tres</td>
+                <td>três</td>
+                <td>tre</td>
+                <td>trois</td>
+                <td>three</td>
+                <td>drei</td>
+                <td>三</td>
+            </tr>
+            <tr>
+                <td>cuatro</td>
+                <td>quatro</td>
+                <td>quattro</td>
+                <td>quatre</td>
+                <td>four</td>
+                <td>vier</td>
+                <td>四</td>
+            </tr>
+            <tr>
+                <td>cinco</td>
+                <td>cinco</td>
+                <td>cinque</td>
+                <td>cinq</td>
+                <td>five</td>
+                <td>fünf</td>
+                <td>五</td>
+            </tr>
+            <tr>
+                <td>seis</td>
+                <td>seis</td>
+                <td>sei</td>
+                <td>six</td>
+                <td>six</td>
+                <td>sechs</td>
+                <td>六</td>
+            </tr>
+            <tr>
+                <td>siete</td>
+                <td>sete</td>
+                <td>sette</td>
+                <td>sept</td>
+                <td>seven</td>
+                <td>sieben</td>
+                <td>七</td>
+            </tr>
+            <tr>
+                <td>ocho</td>
+                <td>oito</td>
+                <td>otto</td>
+                <td>huit</td>
+                <td>eight</td>
+                <td>acht</td>
+                <td>八</td>
+            </tr>
+            <tr>
+                <td>nueve</td>
+                <td>nove</td>
+                <td>nove</td>
+                <td>neuf</td>
+                <td>nine</td>
+                <td>neun</td>
+                <td>九</td>
+            </tr>
+            <tr>
+                <td>diez</td>
+                <td>dez</td>
+                <td>dieci</td>
+                <td>dix</td>
+                <td>ten</td>
+                <td>zehn</td>
+                <td>十</td>
+            </tr>
+        </table>
+        <style>
+            #fourth table {
+                border-collapse: collapse;
+            }
+
+            #fourth table tr:nth-child(1) td,
+            #fourth table tr:nth-child(1) th {
+                background-color: azure;
+            }
+
+            #fourth table tr:nth-child(n+2):nth-child(-n+11) td:nth-child(n+1):nth-child(-n+4){
+        
+                background-color: rgb(227, 217, 124);
+            }
+
+            #fourth table tr:nth-child(n+2):nth-child(-n+11) td:nth-child(n+5):nth-child(-n+6)
+{
+                background-color: rgb(254, 141, 239);
+            }
+
+           #fourth table tr:nth-child(n+2):nth-child(-n+11) td:nth-child(n+7):nth-child(-n+7){
+                background-color: rgb(128, 226, 226);
+            }
+        </style>
+    </div>
+</body>
+
+</html>
