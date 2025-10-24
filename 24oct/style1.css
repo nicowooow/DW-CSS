@@ -1,0 +1,35 @@
+:root{
+    --top: 10px;
+    --left: 20px;
+    --position:-8;
+}
+img{
+    width: 30rem;
+    position: absolute;
+    border-radius: 20px;
+}
+
+img:nth-child(1){
+    top: calc(var(--top)*1.5); left: calc(var(--left)*1.5); z-index:  calc(var(--position)+1);
+}
+img:nth-child(2){
+    top: calc(var(--top)*2.5); left: calc(var(--left)*2.5); z-index:  calc(var(--position)+2);
+}
+img:nth-child(3){
+    top: calc(var(--top)*3.5); left: calc(var(--left)*3.5); z-index:  calc(var(--position)+3);
+}
+img:nth-child(4){
+    top: calc(var(--top)*4.5); left: calc(var(--left)*4.5); z-index:  calc(var(--position)+4);
+}
+img:nth-child(5){
+    top: calc(var(--top)*5.5); left: calc(var(--left)*5.5); z-index:  calc(var(--position)+5);
+}
+img:nth-child(6){
+    top: calc(var(--top)*6.5); left: calc(var(--left)*6.5); z-index:  calc(var(--position)+6);
+}
+img:nth-child(7){
+    top: calc(var(--top)*7.5); left: calc(var(--left)*7.5); z-index:  calc(var(--position)+7);
+}
+img:nth-child(8){
+    top: calc(var(--top)*8.5); left: calc(var(--left)*8.5); z-index:  calc(var(--position)+8);
+}
