@@ -1,0 +1,8 @@
+            #ejer2 {
+                padding: 50px;
+                background-image: conic-gradient(from 270deg at 50%, red, rgb(255, 153, 0), yellow, rgb(17, 255, 0), rgb(0, 247, 255), blue, rgb(255, 0, 255), red);
+            }
+
+            #ejer2 section {
+                background-color: rgb(255, 255, 255, 0.7);
+            }

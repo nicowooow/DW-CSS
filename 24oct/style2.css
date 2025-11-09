@@ -1,0 +1,80 @@
+/*estilos que usan mas de uno*/
+body {
+    background-image: url(https://andeangreattreks.com/wp-content/uploads/puno-titicaca-lake-by-andean-great-treks.jpg);
+    background-size: cover;
+    /*hace que la imagen cubra toda pagina*/
+    background-attachment: fixed;
+    /*si cubre toda la pagina el scroll no le afecta*/
+    margin: 0;
+}
+
+
+section>p,
+article {
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    margin-left: 20%;
+    margin-right: 20%;
+    background-color: bisque;
+}
+
+header,
+footer {
+    margin: 0px;
+    padding: 10px;
+    top: 0; /*esto nos servira para el header*/
+    bottom: 0;/*y este nos servira para el footer*/
+    position: sticky;/*para que sean afectados por el scroll*/
+    text-align: center;
+
+}
+header>h1,
+footer>p {
+    margin: 1px;
+}
+
+/*esilos unitarios*/
+header {
+    padding-top: 1px;
+    z-index: 2;
+    border-radius: 0;
+    background-color: rgb(55, 103, 186);
+}
+
+h1 {
+    filter: drop-shadow(0 0 4px white);
+    font-size: 3rem;
+}
+
+img {
+    float: right;
+    right: 5%;
+    filter:
+        drop-shadow(0 0 6px rgb(0, 0, 0)) drop-shadow(0 0 7px rgb(255, 255, 255));
+    width: 12vw;
+}
+
+.imagen {
+    position: sticky;
+    top: 10rem;
+    z-index: 1;
+}
+
+article>h2 {
+    background-color: bisque;
+    border-bottom: 5px double black;
+    box-shadow: 0 2px 10px 10px bisque;
+    position: sticky;
+    padding-top: 0.5rem;
+    top: 4rem;
+}
+
+p {
+    font-size: 1.4em;
+}
+
+footer {
+    z-index: 2;
+    background-color: darkgoldenrod;
+}

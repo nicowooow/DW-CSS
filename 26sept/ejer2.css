@@ -1,0 +1,36 @@
+h3:first-of-type {
+    color: blue;
+    font-size: 1.8rem;
+}
+
+h3+p {
+    color: rgb(76, 227, 76);
+    font-weight: bold;
+}
+
+section:first-of-type {
+    border: 10px ridge black;
+    background-color: antiquewhite;
+}
+
+section:first-of-type h3 {
+    color: rgb(249, 0, 249);
+}
+
+section h3:nth-child(n+2):nth-last-child(-n+4) {
+    color: red;
+}
+
+section h3+p {
+    color: rgb(106, 215, 132);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 20px;
+}
+
+section h3:nth-child(n+2)+p {
+    font-family: cursive;
+}
+
+section p:last-child {
+    font-size: 4px;
+}

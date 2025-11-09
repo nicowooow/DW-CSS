@@ -1,0 +1,51 @@
+body,
+main,
+article,
+section,
+h3,
+div,
+p {
+    border: 1px solid black;
+    margin: 10px;
+    padding: 30px;
+}
+
+body {
+    background-color: black;
+}
+
+body>* {
+    background-color: #FDD;
+}
+
+body>*>* {
+    background-color: #DFD;
+}
+
+body>*>*>* {
+    background-color: #DDF;
+}
+
+body>*>*>*>* {
+    background-color: #d5f6c7;
+}
+
+body>*>*>*>*>* {
+    background-color: rgb(234, 221, 255);
+}
+
+body>*>*>*>*>*>* {
+    background-color: rgb(175, 139, 233);
+}
+
+body>*>*>*>*>*>*>* {
+    background-color: rgb(113, 111, 243);
+}
+
+body>*>*>*>*>*>*>*>* {
+    background-color: rgb(243, 214, 111);
+}
+
+body>*>*>*>*>*>*>*>*>* {
+    background-color: rgb(255, 255, 255);
+}

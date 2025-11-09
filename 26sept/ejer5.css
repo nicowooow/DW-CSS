@@ -1,0 +1,12 @@
+            ol>li:first-child,
+            ol>li:last-child {
+                background-color: yellow;
+            }
+
+            ol>li:nth-child(n+2):nth-child(-n+5) {
+                background-color: aqua;
+            }
+
+            ol>li:nth-child(n+6):nth-child(-n+9) {
+                background-color: rgb(255, 160, 77);
+            }

@@ -1,0 +1,78 @@
+
+        :root{
+            --r-incio:215;
+            --g-incio:123;
+            --b-incio:255;
+            --color-inicio: rgb(var(--r-incio),var(--g-incio),var(--b-incio));
+            --r-fin:255;
+            --g-fin:87;
+            --b-fin:120;
+            --color-fin: rgb(var(--r-fin),var(--g-fin),var(--b-fin));
+
+            --color-mid-grad: color-mix(in lch, var(--color1) 50%, var(--color2));
+
+        /* Definición del gradiente horizontal de 3 puntos */
+        --gradient: linear-gradient(
+            to right,
+            var(--color1) 0%,        /* Azul al inicio */
+            var(--color-mid) 50%,    /* Color intermedio al centro */
+            var(--color2) 100%       /* Amarillo al final */
+        );
+        }
+        
+        .gradiente{
+            border-collapse: collapse;
+            border: 1px solid black;
+            width: 1200px;
+            height: 30px;
+        }
+
+        .gradiente td{
+            width: 40px;
+            height: 70px;
+            border: 1px solid black;
+        }
+
+        .gradiente tr td:first-child{
+            background-color: var(--color-incio);
+        }
+        .gradiente tr td:last-child{
+            background-color: var(--color-fin);
+        }
+        
+        .gradiente tr td:nth-child(1) {
+  background-color: var(--color-inicio);
+}
+
+.gradiente tr td:nth-child(2) {
+  background-color: color-mix(in srgb, var(--color-inicio) 90%, var(--color-fin));
+}
+.gradiente tr td:nth-child(3) {
+  background-color: color-mix(in srgb, var(--color-inicio) 80%, var(--color-fin));
+}
+.gradiente tr td:nth-child(4) {
+  background-color: color-mix(in srgb, var(--color-inicio) 70%, var(--color-fin));
+}
+.gradiente tr td:nth-child(5) {
+  background-color: color-mix(in srgb, var(--color-inicio) 60%, var(--color-fin));
+}
+.gradiente tr td:nth-child(6) {
+  background-color: color-mix(in srgb, var(--color-inicio) 50%, var(--color-fin));
+}
+.gradiente tr td:nth-child(7) {
+  background-color: color-mix(in srgb, var(--color-inicio) 40%, var(--color-fin));
+}
+.gradiente tr td:nth-child(8) {
+  background-color: color-mix(in srgb, var(--color-inicio) 30%, var(--color-fin));
+}
+.gradiente tr td:nth-child(9) {
+  background-color: color-mix(in srgb, var(--color-inicio) 20%, var(--color-fin));
+}
+.gradiente tr td:nth-child(10) {
+  background-color: color-mix(in srgb, var(--color-inicio) 10%, var(--color-fin));
+}
+
+.gradiente tr td:nth-child(11) {
+  background-color: var(--color-fin);
+}
+

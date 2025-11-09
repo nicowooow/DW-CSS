@@ -1,0 +1,19 @@
+            table tr td+td {
+                background-color: yellow;
+            }
+
+            td~td {
+                color: red;
+            }
+
+            table[title][lang] {
+                border: 2px solid green;
+            }
+
+            li:nth-child(3) {
+                font-weight: bold;
+            }
+
+            li:last-child {
+                text-decoration: underline;
+            }

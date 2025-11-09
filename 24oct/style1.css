@@ -7,29 +7,40 @@ img{
     width: 30rem;
     position: absolute;
     border-radius: 20px;
+    border: 6px solid white;
+    box-shadow: 0 0 0 4px rgb(0, 0, 0);
+
 }
 
 img:nth-child(1){
-    top: calc(var(--top)*1.5); left: calc(var(--left)*1.5); z-index:  calc(var(--position)+1);
+    top: calc(var(--top)*2.9); left: calc(var(--left)*2.9); z-index:  calc(var(--position)+1); transition: all 2s ease;
 }
 img:nth-child(2){
-    top: calc(var(--top)*2.5); left: calc(var(--left)*2.5); z-index:  calc(var(--position)+2);
+    top: calc(var(--top)*4.9); left: calc(var(--left)*4.9); z-index:  calc(var(--position)+2); transition: all 2s ease;
 }
 img:nth-child(3){
-    top: calc(var(--top)*3.5); left: calc(var(--left)*3.5); z-index:  calc(var(--position)+3);
+    top: calc(var(--top)*6.9); left: calc(var(--left)*6.9); z-index:  calc(var(--position)+3); transition: all 2s ease;
 }
 img:nth-child(4){
-    top: calc(var(--top)*4.5); left: calc(var(--left)*4.5); z-index:  calc(var(--position)+4);
+    top: calc(var(--top)*8.9); left: calc(var(--left)*8.9); z-index:  calc(var(--position)+4); transition: all 2s ease;
 }
 img:nth-child(5){
-    top: calc(var(--top)*5.5); left: calc(var(--left)*5.5); z-index:  calc(var(--position)+5);
+    top: calc(var(--top)*10.9); left: calc(var(--left)*10.9); z-index:  calc(var(--position)+5); transition: all 2s ease;
 }
 img:nth-child(6){
-    top: calc(var(--top)*6.5); left: calc(var(--left)*6.5); z-index:  calc(var(--position)+6);
+    top: calc(var(--top)*12.9); left: calc(var(--left)*12.9); z-index:  calc(var(--position)+6); transition: all 2s ease;
 }
 img:nth-child(7){
-    top: calc(var(--top)*7.5); left: calc(var(--left)*7.5); z-index:  calc(var(--position)+7);
+    top: calc(var(--top)*14.9); left: calc(var(--left)*14.9); z-index:  calc(var(--position)+7); transition: all 2s ease;
 }
 img:nth-child(8){
-    top: calc(var(--top)*8.5); left: calc(var(--left)*8.5); z-index:  calc(var(--position)+8);
+    top: calc(var(--top)*16.9); left: calc(var(--left)*16.9); z-index:  calc(var(--position)+8); transition: all 2s ease;
+}
+/*para los hovers*/
+img:hover{
+    z-index:1;
+    transform: scale(1.2);
+    left: calc(var(--left)*25);
+    transition: all 0.7s ease;
+
 }

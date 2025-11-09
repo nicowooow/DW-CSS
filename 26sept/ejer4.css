@@ -1,0 +1,47 @@
+table {
+    border-collapse: collapse;
+    /* Para que las celdas se toquen */
+    font-size: 60px;
+    /* Tamaño grande para las piezas */
+    text-align: center;
+    border: 3px solid #333;
+}
+
+td {
+    width: 90px;
+    height: 90px;
+    padding: 0;
+    line-height: 60px;
+    /* Centra verticalmente las piezas */
+    font-weight: bold;
+    /* Hace la notación más visible */
+    font-family: Arial, sans-serif;
+    position: relative;
+    border: 3px solid #333;
+
+}
+
+tr {
+    border: 3px solid #333;
+
+}
+
+/* 1. Filas PARES (tr:2n) / Columnas IMPARES (td:2n+1) -> OSCURO */
+tr:nth-child(2n)>td:nth-child(2n+1) {
+    background-color: #B58863;
+}
+
+/* 2. Filas PARES (tr:2n) / Columnas PARES (td:2n) -> CLARO */
+tr:nth-child(2n)>td:nth-child(2n) {
+    background-color: #F0D9B5;
+}
+
+/* 3. Filas IMPARES (tr:2n+1) / Columnas IMPARES (td:2n+1) -> CLARO */
+tr:nth-child(2n+1)>td:nth-child(2n+1) {
+    background-color: #F0D9B5;
+}
+
+/* 4. Filas IMPARES (tr:2n+1) / Columnas PARES (td:2n) -> OSCURO */
+tr:nth-child(2n+1)>td:nth-child(2n) {
+    background-color: #B58863;
+}
