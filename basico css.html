@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Manual Completo de CSS - Teoría y Ejemplos</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f6f6fa;
+            margin: 2em;
+            color: #23253a;
+        }
+
+        h1,
+        h2 {
+            color: #712a2a;
+        }
+
+        h3 {
+            color: #335a83;
+        }
+
+        section {
+            margin-bottom: 2em;
+            padding: 1em;
+            background: #fff;
+            border-radius: 7px;
+            box-shadow: 0 1px 4px #0002;
+        }
+
+        pre {
+            background: #f0f0f5;
+            padding: .5em;
+            border-radius: 4px;
+        }
+
+        code {
+            font-family: "Fira Mono", "Consolas", monospace;
+            font-size: 1em;
+        }
+
+        ul {
+            margin-bottom: 1em;
+        }
+
+        .nota {
+            color: #666;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Manual Detallado de CSS</h1>
+    <p>Guía estructurada con teoría, ejemplos y comentarios. Inspirada en los contenidos de dww.es/css y documentación
+        moderna.</p>
+
+    <section>
+        <h2>0. ¿Qué es CSS?</h2>
+        <p>CSS (<b>Cascading Style Sheets</b>) es un lenguaje que permite separar la presentación del contenido en una
+            web. Permite controlar colores, fuentes, márgenes, posicionamiento, animaciones y adaptabilidad de la
+            página.</p>
+    </section>
+    <section>
+        <h2>1. Sintaxis y selectores</h2>
+        <ul>
+            <li>Cada <b>regla CSS</b> tiene un selector y un bloque de propiedades:</li>
+        </ul>
+        <pre><code>
+.selector {
+  propiedad: valor;
+  /* Comentario: esta línea aplica 'valor' a 'propiedad' en elementos coincidentes */
+}
+</code></pre>
+        <ul>
+            <li><b>Selectores básicos</b>: etiqueta (p), clase (.clase), id (#id)</li>
+            <li><b>Selectores combinados</b>: descendiente (div p), hijo directo (nav > a), adyacente (h1 + p)</li>
+            <li><b>Selectores avanzados</b>: [type="text"], :hover, ::before, :nth-child(odd)</li>
+        </ul>
+        <pre>odede>
+ul.menu li:first-child { font-weight:bold; }
+a:hover { color:red; } /* Al pasar mouse */
+input[type="email"] { border:2px solid steelblue; }
+</code></pre>
+    </section>
+    <section>
+        <h2>2. Inclusión de CSS</h2>
+        <ul>
+            <li>En línea (dentro de la etiqueta HTML): odede>&lt;h1 style="color:green;"&gt;Hola&lt;/h1&gt;</code></li>
+            <li>En la cabecera HTML (<b>interno</b>):
+                <pre>odede>
+      &lt;style&gt;
+      body { background:#f1f1f1; }
+      &lt;/style&gt;
+    </code></pre>
+            </li>
+            <li>Archivo externo (profesional):
+                <pre><code>
+      &lt;link rel="stylesheet" href="estilos.css"&gt;
+    </code></pre>
+            </li>
+        </ul>
+    </section>
+    <section>
+        <h2>3. Colores y Unidades</h2>
+        <ul>
+            <li><b>Colores:</b> nombre (<code>red</code>), hex (#e63946), rgb (<code>rgb(200,0,0)</code>), rgba (con
+                transparencia), hsl.</li>
+            <li><b>Unidades:</b> px, %, em, rem, vw/vh (viewport), ch, fr (Grid).</li>
+        </ul>
+        <pre><code>
+body { color: #222; background: rgb(251,251,248); }
+div { width: 30em; height: 20vh; }
+</code></pre>
+        <p class="nota">Usa <b>rem/em</b> para escalabilidad y adaptabilidad. <b>px</b> es fijo; <b>%</b> relativo al
+            contenedor.</p>
+    </section>
+    <section>
+        <h2>4. Fuentes y Texto</h2>
+        <ul>
+            <li>odede>font-family</code>: fuente o grupo (odede>Arial, Verdana, sans-serif</code>)</li>
+            <li><code>font-size</code>, <code>font-weight</code>, <code>font-style</code></li>
+            <li>odede>line-height</code>: altura entre líneas</li>
+            <li><code>text-align</code>: alineación horizontal (left, center, right, justify)</li>
+            <li><code>letter-spacing</code>, <code>word-spacing</code>, <code>text-transform</code>
+                (mayúsculas/minúsculas)</li>
+        </ul>
+        <pre><code>
+h1 {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase; /* MAYÚSCULAS */
+}
+</code></pre>
+    </section>
+    <section>
+        <h2>5. El modelo de caja (Box Model)</h2>
+        <ul>
+            <li>Todo elemento tiene: <b>contenido</b>, <b>padding</b> (espacio interno), <b>border</b> (borde) y
+                <b>margin</b> (fuera del borde).
+            </li>
+            <li><code>box-sizing</code>: <b>content-box</b> (por defecto, el ancho no incluye border/padding) o
+                <b>border-box</b>.
+            </li>
+        </ul>
+        <pre><code>
+.caja {
+  width: 300px;
+  padding: 10px;    /* Relleno hacia dentro */
+  border: 4px solid #307;
+  margin: 15px auto;
+  box-sizing: border-box; /* ancho incluye padding y border */
+}
+</code></pre>
+    </section>
+    <section>
+        <h2>6. Fondos, Bordes y Sombras</h2>
+        <ul>
+            <li><code>background-color, background-image, background-size, background-position, background-repeat</code>
+            </li>
+            <li><code>border, border-radius, box-shadow</code></li>
+        </ul>
+        <pre>odede>
+.banner {
+  background: url("fondo.jpg") center/cover; /* cover estira, center centra */
+  border-radius: 16px;
+  box-shadow: 0 6px 30px rgba(40,60,120,.17);
+}
+</code></pre>
+    </section>
+    <section>
+        <h2>7. Posicionamiento y display</h2>
+        <ul>
+            <li><code>display</code>: block, inline, inline-block, none, flex, grid, table, etc.</li>
+            <li><code>position</code>: static, relative, absolute, fixed, sticky</li>
+            <li><code>float</code>, <code>clear</code> (flujo flotante y limpieza)</li>
+            <li>odede>z-index</code>: superposición de elementos</li>
+        </ul>
+        <pre><code>
+.header { position: fixed; top: 0; left: 0; width: 100%; }
+.avatar { float: right; margin-left:1em; }
+.capa-top { z-index: 99; position: absolute; }
+</code></pre>
+    </section>
+    <section>
+        <h2>8. Selectores avanzados y pseudo-elementos/clases</h2>
+        <ul>
+            <li><code>:hover</code>, odede>:active</code>, <code>:focus</code>, <code>:nth-child(n)</code>,
+                <code>::before</code>, odede>::after</code>
+            </li>
+        </ul>
+        <pre><code>
+.btn:hover { background: #ffe080; cursor: pointer; }
+.lista li:nth-child(odd) { background: #eef; }
+.input:focus { border-color: #4d8; }
+.alerta::before { content: "⚠️ "; }
+</code></pre>
+    </section>
+    <section>
+        <h2>9. Responsive: Media queries</h2>
+        <ul>
+            <li>Permiten adaptar los estilos según el tamaño de pantalla o condiciones del dispositivo.</li>
+        </ul>
+        <pre><code>
+@media (max-width: 600px) {
+  nav { flex-direction: column; }
+  h1 { font-size: 1.3em; }
+}
+</code></pre>
+    </section>
+    <section>
+        <h2>10. Flexbox</h2>
+        <ul>
+            <li>Sistema de cajas flexibles para alinear, distribuir y ordenar en una y dos dimensiones.</li>
+        </ul>
+        <pre><code>
+.contenedor {
+  display: flex;
+  flex-direction: row;     /* fila (horizontal) || column (vertical) */
+  justify-content: center; /* centra horizontalmente */
+  align-items: center;     /* centra verticalmente */
+  gap: 1em;                /* separación entre hijos */
+}
+.item { flex: 1 1 200px; }
+</code></pre>
+    </section>
+    <section>
+        <h2>11. Grid CSS</h2>
+        <ul>
+            <li>Diseño bidimensional avanzado: filas y columnas personalizables.</li>
+        </ul>
+        <pre><code>
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 2em;
+}
+.grid > div {
+  background: #eef;
+  border-radius: 8px;
+  padding: 14px;
+}
+</code></pre>
+    </section>
+    <section>
+        <h2>12. Animaciones y transiciones</h2>
+        <ul>
+            <li><code>transition</code>: suaviza cambios de valores</li>
+            <li><code>animation</code>: define animaciones con <code>@keyframes</code></li>
+        </ul>
+        <pre><code>
+.boton {
+  transition: background 0.4s, transform 0.3s;
+}
+.boton:hover {
+  background: #aaf;
+  transform: scale(1.1);
+}
+@keyframes latido {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2);}
+}
+.cora {
+  animation: latido 1s infinite;
+}
+</code></pre>
+    </section>
+    <section>
+        <h2>13. Buenas prácticas y consejos</h2>
+        <ul>
+            <li>Escribe reglas generales antes que específicas, para que puedas sobrescribir.</li>
+            <li>Usa clases para reutilizar estilos.</li>
+            <li>Organiza el CSS en módulos por componente/zona/proyecto.</li>
+            <li>Valida tu CSS y usa prefijos si es necesario (<code>-webkit-, -ms-, -moz-</code> para navegadores
+                viejos).</li>
+            <li>Comenta usando <code>/* ... */</code> tus reglas importantes.</li>
+            <li>Simplifica el uso de !important salvo para excepciones reales.</li>
+            <li>Siempre piensa en accesibilidad y responsive.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>14. Selectores útiles y truco rápido</h2>
+        <ul>
+            <li><b>*</b> — selector universal; afecta a todo: <code>* { box-sizing: border-box; }</code></li>
+            <li><b>[attribute]</b> — selecciona por atributo: <code>input[type="password"]</code></li>
+            <li><b>:not()</b> — aplica donde NO exista: <code>li:not(.activado)</code></li>
+            <li><b>:nth-child(n), :first-child, :last-child</b> — afecta al N-ésimo hijo: <code>tr:nth-child(odd)</code>
+            </li>
+            <li><b>::before, ::after</b> — añade contenido decorativo sin HTML extra</li>
+        </ul>
+        <pre><code>
+.btn::before { content: "→ "; color: #42b; }
+</code></pre>
+    </section>
+
+    <section>
+        <h2>15. Variables CSS (Custom Properties)</h2>
+        <p>
+            Las variables permiten definir valores reutilizables y cambiar todo el tema visual muy fácil.<br>
+            Se definen con <code>--nombre</code> y se usan con <code>var(--nombre)</code>.
+        </p>
+        <pre><code>
+:root {
+  --color-principal: #2a75b3;
+  --radius: 10px;
+}
+.boton {
+  background: var(--color-principal);
+  border-radius: var(--radius);
+  color: white;
+}
+/* Puedes cambiar el valor en cualquier parte del documento HTML */
+</code></pre>
+    </section>
+
+    <section>
+        <h2>16. Propiedades clave agrupadas ("chuleta CSS")</h2>
+        <ul>
+            <li><b>Color y fondo:</b> color, background-color, background-image, opacity</li>
+            <li><b>Texto:</b> font-size, font-family, font-weight, text-transform, text-shadow, letter-spacing,
+                white-space</li>
+            <li><b>Caja:</b> width, height, min/max-width, overflow, box-shadow, border, border-radius, outline</li>
+            <li><b>Espaciado:</b> margin, margin-top/right/bottom/left, padding, padding-*</li>
+            <li><b>Posicionamiento:</b> position, left/top/right/bottom, z-index</li>
+            <li><b>Flex/Grid:</b> display, flex-direction, flex-wrap, justify-content, align-items,
+                grid-template-rows/columns, gap</li>
+            <li><b>Transición/Animación:</b> transition, transform, animation, keyframes</li>
+            <li><b>Responsive:</b> @media, max-width, min-width, orientation</li>
+            <li><b>Otros:</b> cursor, pointer-events, user-select, visibility, content</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>17. Glosario esencial (para novatos)</h2>
+        <ul>
+            <li><b>Selector:</b> parte antes de las llaves, decide qué etiquetas afectas</li>
+            <li><b>Propiedad:</b> lo que quieres modificar (color, margen, posición)</li>
+            <li><b>Valor:</b> cómo quieres la propiedad (rojo, 20px, flex, etc.)</li>
+            <li><b>Regla:</b> conjunto selector+propiedad-valor (<code>p { color: red; }</code>)</li>
+            <li><b>Herencia:</b> qué estilos "bajan" a los hijos (ej: color texto)</li>
+            <li><b>Especificidad:</b> qué regla prevalece si varias afectan lo mismo</li>
+            <li><b>Reset CSS:</b> archivo para igualar todos los estilos por defecto de los navegadores</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>18. Herramientas y recursos</h2>
+        <ul>
+            <li><a href="https://developer.mozilla.org/es/docs/Web/CSS/Reference">Referencia completa CSS MDN</a></li>
+            <li><a href="https://css-tricks.com/snippets/css/">Snippets CSS útiles</a></li>
+            <li><a href="https://flexboxfroggy.com/">Juego interactivo Flexbox</a></li>
+            <li><a href="https://cssgridgarden.com/">Juego interactivo Grid</a></li>
+            <li><a href="https://codepen.io/">Probar CSS y ver ejemplos</a></li>
+            <li><a href="https://caniuse.com/css">Ver compatibilidad de propiedades</a></li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>19. Gradientes y fondos avanzados</h2>
+        <pre><code>
+/* Degradado lineal: de azul a celeste */
+.fondo-degradado {
+  background: linear-gradient(90deg, #357af7 0%, #88e2ef 100%);
+}
+/* Degradado radial (circular) */
+.circulo {
+  background: radial-gradient(circle, #fffa90, #ff6d00 90%);
+}
+/* Multiples fondos: imagen encima de degradado */
+.banner {
+  background:
+    url("ondas.svg") repeat-x center bottom,
+    linear-gradient(180deg,#7af6f8 70%,#191970 100%);
+}
+</code>
+<!-- Comentario: Los gradientes reemplazan imágenes pesadas y permiten crear fondos y botones atractivos y adaptativos. -->
+</pre>
+    </section>
+
+    <section>
+        <h2>20. Filtros, blend modes y efectos visuales</h2>
+        <pre><code>
+.caja-blur {
+  filter: blur(4px) brightness(0.6) grayscale(0.8);
+  /* Se pueden combinar filtros para hacer difuminados y otros efectos */
+}
+.superpuesta {
+  background: url(fondo.jpg);
+  mix-blend-mode: multiply;   /* Mezcla el fondo actual con los de debajo */
+}
+</code></pre>
+        <p><i>
+                Los filtros y blending-modes permiten efectos como fondos borrosos tipo "glassmorphism", superposiciones
+                y creatividad gráfica sin usar Photoshop.
+            </i></p>
+    </section>
+
+    <section>
+        <h2>21. Funciones CSS (calc, clamp, min/max)</h2>
+        <pre><code>
+h1 {
+  font-size: clamp(1.3rem, 2.5vw, 3rem); /* Tamaño fluido entre 1.3rem y 3rem */
+}
+.seccion {
+  width: calc(100% - 2em); /* Calcula tamaño restando espacios */
+  margin: min(5vw, 24px) auto; /* Toma el valor menor según ancho viewport */
+}
+</code></pre>
+        <p><i>
+                Funciones como <b>calc</b>, <b>clamp</b> y <b>min/max</b> permiten ajustarse mejor a dispositivos, hacer
+                layouts responsivos y eliminar muchas media queries.
+            </i></p>
+    </section>
+
+    <section>
+        <h2>22. Grid avanzado y naming areas</h2>
+        <pre><code>
+.grid-demo {
+  display: grid;
+  grid-template-columns: 1fr 2fr minmax(200px, 400px);
+  grid-template-areas:
+    "header  header"
+    "menu    main"
+    "footer  footer";
+  grid-gap: 1em;
+}
+.header { grid-area: header; }
+.menu { grid-area: menu; }
+.main { grid-area: main; }
+.footer { grid-area: footer; }
+</code></pre>
+        <p><i>
+                Puedes nombrar áreas del grid para mayor legibilidad y maquetaciones complejas. Usa minmax/auto-fit para
+                sistemas de columnas adaptables.
+            </i></p>
+    </section>
+
+    <section>
+        <h2>23. Clip-path y formas avanzadas</h2>
+        <pre><code>
+.imagen-circular {
+  clip-path: circle(50% at 50% 50%);
+}
+.diagonal {
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+}
+</code></pre>
+        <p>
+            <i>
+                Clip-path recorta elementos en cualquier forma, perfecto para efectos de avatars, banners, secciones
+                diagonales o formas abstractas.
+            </i>
+        </p>
+    </section>
+
+    <section>
+        <h2>24. Scroll, scroll-snap, overflow y scrollbar styling</h2>
+        <pre><code>
+.wrapper {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+.caja {
+  scroll-snap-align: start;
+}
+/* Scrollbar personalizado (moderno) */
+.wrapper::-webkit-scrollbar {
+  height: 9px; background: #eee;
+}
+.wrapper::-webkit-scrollbar-thumb {
+  background: #7af; border-radius: 6px;
+}
+</code></pre>
+        <p><i>
+                Permiten crear carruseles, galerías y experiencias móviles “suaves”. Scroll-snap previene
+                desalineaciones y asegura paradas exactas en slides/galerías.
+            </i></p>
+    </section>
+
+    <section>
+        <h2>25. Variables CSS avanzadas, herencia y reacción a media queries</h2>
+        <pre><code>
+:root {
+  --tam-base: 1.2rem;
+  --sombra: 0 2px 10px #4af3b650;
+}
+.caja {
+  font-size: var(--tam-base);
+  box-shadow: var(--sombra);
+}
+@media (max-width: 700px) {
+  :root {
+    --tam-base: 1rem;
+  }
+}
+/* Ahora cambia el tamaño base automáticamente si la pantalla es pequeña */
+</code></pre>
+        <p>
+            <i>
+                Así puedes crear temas claros/oscuro, cambiar estilos globalmente por modo móvil, o reaccionar a
+                preferencias de usuario solo cambiando una variable.
+            </i>
+        </p>
+    </section>
+
+    <section>
+        <h2>26. Container queries (consultas de contenedor, último estándar)</h2>
+        <pre><code>
+.cardlist {
+  container-type: inline-size;
+}
+.card {
+  width: 100%;
+  container-name: card;
+}
+@container card (max-width: 400px) {
+  .card { flex-direction: column; font-size: 0.8em; }
+}
+/* Así un componente puede adaptarse a su contenedor sin depender del viewport global */
+</code></pre>
+    </section>
+<section>
+<h2>27. Especificidad y !important</h2>
+<p>
+<strong>Especificidad</strong> es la "fuerza" de un selector para sobreescribir estilos.<br>
+- Etiqueta: 1 punto<br>
+- Clase o pseudoclase: 10 puntos<br>
+- ID: 100 puntos<br>
+- Inline style: 1000 puntos<br>
+El !important <b>debe evitarse</b>, pero fuerza una regla sobre todas.
+</p>
+<pre><code>
+#autos { color: red; }           /* 100 puntos */
+.autos.seat { color: green; }    /* 20 puntos */
+div p span { color: blue; }      /* 3 puntos */
+* { color: gray !important; }    /* fuerza máxima, sobreescribe TODO si es declarado después */
+</code></pre>
+</section>
+
+<section>
+<h2>28. Tablas: etiquetas <code>thead</code>, <code>tbody</code>, <code>tfoot</code> y estilos</h2>
+<pre><code>
+<table>
+  <caption>Tabla agrupada</caption>
+  <thead>
+    <tr><th>Columna 1</th><th>Columna 2</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Datos 1</td><td>Datos 2</td></tr>
+    <tr><td>Datos 3</td><td>Datos 4</td></tr>
+  </tbody>
+  <tfoot>
+    <tr><td colspan="2">Pie de tabla</td></tr>
+  </tfoot>
+</table>
+/* Puedes dar color diferenciador a cada parte sin class: */
+thead { background: #cef; }
+tbody tr:nth-child(even) { background: #ffe; }
+tfoot { background: #eee; font-style: italic; }
+</code></pre>
+</section>
+
+<section>
+<h2>29. <code>colspan</code> y <code>rowspan</code> (fusionar celdas en tablas)</h2>
+<pre><code>
+<table>
+  <caption>Cabecera agrupada</caption>
+  <tr><th colspan="4">Título de tabla</th></tr>
+  <tr>
+    <td rowspan="2">Izquierda</td>
+    <td>Superior derecha</td>
+  </tr>
+  <tr>
+    <td>Inferior derecha</td>
+  </tr>
+</table>
+</code></pre>
+<p>
+Funde celdas horizontalmente (<strong>colspan</strong>) o verticalmente (<strong>rowspan</strong>) para maquetados complejos.
+</p>
+</section>
+
+<section>
+<h2>30. Gradientes múltiples, direcciones y transparencias</h2>
+<pre><code>
+/* Varios gradientes juntos */
+.fondo-grad-efecto {
+  background-image:
+    linear-gradient(135deg, #6ee 40%,rgba(255,0,0,0.5)),
+    radial-gradient(circle farthest-side, #f08080, transparent 70%);
+}
+
+/* Transparencia (canal alfa) */
+.transp {
+  background: rgba(50,100,250,0.3); /* 0.3 = 30% opaco */
+}
+</code></pre>
+<p>
+  Explora <a href="https://cssgradient.io/">cssgradient.io</a> para ver combinaciones y ejemplos visuales.
+</p>
+</section>
+
+<section>
+<h2>31. Selectores avanzados (sin class ni id)</h2>
+<ul>
+  <li><b>selector de atributos:</b> input[type="text"]</li>
+  <li><b>selector hijo directo:</b> article > section</li>
+  <li><b>selector hermanos:</b> td + td (adyacente), td ~ td (todos posteriores)</li>
+  <li><b>selector descendiente:</b> section p (todos los p dentro de section)</li>
+</ul>
+<pre><code>
+section > h3 { border-bottom:2px solid #37a; }
+table td:nth-child(3) { background: #fed; }
+li:first-child, li:last-child { color: blue; }
+td + td { background: #aad; } /* 1ª a la derecha de otra */
+</code></pre>
+</section>
+
+<section>
+<h2>32. Pseudoelementos y pseudoclases</h2>
+<ul>
+  <li><code>:hover</code>, <code>:focus</code>, <code>:active</code>, <code>:not(...)</code>, <code>:nth-child(n)</code>, <code>:first-child</code>, <code>:last-child</code></li>
+  <li><code>::before</code>, <code>::after</code> — añaden contenido visual decorativo</li>
+</ul>
+<pre><code>
+a:hover { text-decoration: underline; } /* subraya links al pasar el mouse */
+.lista li:nth-child(odd) { background: #eef; }
+.alerta::before { content: "❗"; color: orange; }
+ul li:not(:last-child)::after { content: ","; color: #888; }
+</code></pre>
+</section>
+
+<section>
+<h2>33. Tableros, diseños sin clases: ajedrez, cuadrantes y listas</h2>
+<pre><code>
+/* Tablero de ajedrez 8x8 */
+.chess td { width:2.5em; height:2.5em; text-align:center; font-size:2em;}
+.chess tr:nth-child(even) td:nth-child(odd),
+.chess tr:nth-child(odd) td:nth-child(even) { background:#333; color:white; }
+.chess td { background:#eee; }
+/* Llena usando &lt;td&gt;♞&lt;/td&gt; , &lt;td&gt;♖&lt;/td&gt;, etc. */
+</code></pre>
+<p>
+En tableros y tablas grandes, usa nth-child combinado y combinaciones de posición para colorear celdas, cuadros o cuadrantes como piden los ejercicios. No uses class ni id, solo selectores.
+</p>
+</section>
+
+<section>
+<h2>34. Ejercicios de práctica extra (selección avanzada)</h2>
+<ul>
+  <li>Colorear la segunda, penúltima y último elemento usando <code>:nth-child</code> y <code>:last-child</code></li>
+  <li>Marcar cuadrantes o zonas de tabla diferenciando filas/columnas: <code>td:nth-child(1n+5):nth-child(-n+8)</code></li>
+  <li>Resaltar grupos de elementos según posición: <code>ol li:nth-child(n+5):nth-child(-n+7)</code></li>
+</ul>
+</section>
+
+    <footer>
+        <p>Manual generado por asistente AI con estructura y ejemplos modernos, inspirado en dww.es/css y la
+            documentación oficial.</p>
+    </footer>
+
+</body>
+
+</html>

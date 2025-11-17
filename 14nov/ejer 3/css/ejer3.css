@@ -1,0 +1,134 @@
+body,
+div,
+section,
+header,
+nav,
+article,
+footer,
+h1,
+h2,
+p,
+a,
+button,
+input {
+    margin: 20px;
+    padding: 3px;
+    border: solid 2px black;
+}
+
+body::before {
+    display: inline;
+    content: '<body>';
+}
+
+body {
+    background-color: rgb(255, 179, 128);
+}
+
+div::before {
+    display: inline;
+    content: ' <div>';
+}
+
+div {
+    background-color: rgb(230, 255, 139);
+}
+
+section::before {
+    display: inline;
+    content: ' <section>';
+}
+
+section {
+    background-color: rgb(147, 255, 125);
+}
+
+header::before {
+    display: inline;
+    content: ' <header>';
+}
+
+header {
+    background-color: rgb(128, 252, 235);
+}
+
+nav::before {
+    display: inline;
+    content: ' <nav>';
+}
+
+nav {
+    background-color: rgb(135, 175, 251);
+}
+
+article::before {
+    display: inline;
+    content: ' <article>';
+}
+
+article {
+    background-color: rgb(199, 135, 255);
+}
+
+footer::before {
+    display: inline;
+    content: ' <footer>';
+}
+
+footer {
+    background-color: rgb(255, 124, 237);
+}
+
+h1::before {
+    display: inline;
+    content: ' <h1>';
+}
+
+h1 {
+    background-color: rgb(255, 132, 175);
+}
+
+h2::before {
+    display: inline;
+    content: ' <h2>' red;
+}
+
+h2 {
+    background-color: rgb(255, 195, 126);
+}
+
+p::before {
+    display: inline;
+    content: ' <p>';
+}
+
+p {
+    background-color: rgb(172, 127, 255);
+}
+
+a::before {
+    display: inline;
+    content: ' <a>';
+}
+
+a {
+    background-color: rgb(255, 126, 126);
+}
+
+button::before {
+    display: inline;
+    content: ' <button>';
+}
+
+button {
+    background-color: rgb(74, 194, 154);
+}
+
+input::before {
+    display: inline;
+    content: ' <input>';
+}
+
+input {
+    background-color: rgb(52, 137, 174);
+}

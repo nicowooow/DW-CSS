@@ -1,0 +1,29 @@
+body {
+    background: #383333;
+    padding: 20px;
+}
+
+body>* {
+    background: #e16f3e;
+    padding: 20px;
+}
+
+body>*>* {
+    background: #BBDED6;
+    padding: 20px;
+}
+
+body>*>*>* {
+    background: #8ac6d1;
+    padding: 20px;
+}
+
+body>*>*>*>* {
+    background: #ffb6b9;
+    padding: 20px;
+}
+
+body>*>*>*>*>* {
+    background: #f6eac2;
+    padding: 20px;
+}

@@ -1,0 +1,28 @@
+body>*>*>*>*{
+    padding: 10px;
+}
+/* la primera letra de cada parrafo sera diferente al resto del parrafo*/
+p::first-letter {
+    font-weight: bold;
+    color: rgb(35, 35, 127);
+    font-size: 30px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    background-color: antiquewhite;
+    color: rgb(110, 75, 75);
+}
+
+p:nth-child(2n){
+    background-color: lightgreen;
+    color: rgb(43, 43, 43);
+    
+}
+p:nth-child(2n+1){
+    color: lightgreen;
+    background-color: rgb(43, 43, 43);
+}
+*{
+    font-family: cursive;
+
+}
