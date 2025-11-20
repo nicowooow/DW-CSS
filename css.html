@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Manual CSS Visual Bloques + Explicaciones</title>
+  <style>
+    html { background: #eef6fa; }
+    body {
+      margin: 24px auto;
+      max-width: 1100px;
+      background: #f7fafc;
+      color: #23253a;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      box-shadow: 0 10px 50px #468cbd1a;
+      border-radius: 18px;
+      padding: 2em 2em 1em 2em;
+    }
+    h1, h2 { color: #487cd3; letter-spacing: 0.03em; }
+    h2 { border-bottom: 2px solid #b2dafa50; margin-bottom: 0.6em; padding-bottom: 0.15em;}
+    h3 { color:#26456a;}
+    section, article, nav, header, main, aside, footer, div, table {
+      position: relative;
+      margin-bottom: 1.9em;
+      padding: 1.1em 1.2em 1.1em 1.2em;
+      border-radius: 12px;
+      box-shadow: 0 1px 7px #487cd320;
+      background: #fff;
+      border-left: 8px solid #87bbf7;
+    }
+    section { border-left-color: #a7e6cf;}
+    article { border-left-color: #e9a6de;}
+    nav { border-left-color: #f9e375;}
+    aside { border-left-color: #efd36f;}
+    header { border-left-color: #fbb4a3;}
+    main { border-left-color: #a8c6ff;}
+    footer { border-left-color: #dbadb5;}
+    table { background: #f8fdff;}
+    /* Etiqueta flotante visual */
+    body::before,
+    header::before, main::before, nav::before, aside::before, section::before, article::before, footer::before, div::before,
+    h1::before, h2::before, h3::before, h4::before, h5::before, h6::before, p::before,
+    ul::before, ol::before, li::before, a::before, button::before, input::before,
+    table::before, thead::before, tbody::before, tfoot::before, tr::before, td::before, th::before {
+        padding: 10px;
+      content: attr(data-label);
+      position: absolute;
+      top: -13px; left: 10px;
+      background: #252957;
+      color: #faecbb;
+      font-size: .91em;
+      padding: 0px 7.5px;
+      border-radius: 7px;
+      font-family: monospace;
+      opacity: 0.95;
+      z-index: 4;
+      pointer-events: none;
+      font-weight: normal;
+      box-shadow: 0 2px 8px #0001;
+      letter-spacing: 0.01em;
+      border-left: 4px solid #ffd473;
+      border-right: 2px solid #cac618;
+      line-height:1.57;
+    }
+    /* Mostrar solo donde hay data-label */
+    [data-label]:before { display: block; }
+    p, ul, ol, li, h1, h2, h3, h4, h5, h6 { margin-top: 1em;}
+    ul, ol { margin-left: 2em; }
+    code { background: #eeeeff; color: #132f44; border-radius: 3px; padding: 2px 4px;}
+    pre { background: #d4edff; border-radius: 8px; margin: 1em 0; padding: .8em 1.2em; overflow-x: auto;}
+    th, td { border: 1px solid #c2e2f550; padding: 6px 16px;}
+    th { background: #f1e7c8; }
+    .notes, .exp, .glosario, .chuleta, .tip { font-size: .99em; color: #504e29; margin: .9em 0 1.3em 0; background: #fff9e1; border-left:3px solid #fc3; border-radius:9px; padding:.6em 1.3em; }
+    .tip {background: #e4ffe7; border-left:2.5px solid #54b27c;}
+    .demo-color { display:inline-block; width:1em; height:1em; border-radius:50%; margin-right:.5em; border:1px solid #ccc; }
+  </style>
+</head>
+<body data-label="<body>">
+<header data-label="<header>">
+  <h1 data-label="<h1>">Manual visual de bloques & CSS + chuleta rápida</h1>
+  <nav data-label="<nav>">
+    <ul data-label="<ul>">
+      <li data-label="<li>">Inicio</li>
+      <li data-label="<li>">Ejemplo Anidado</li>
+    </ul>
+    <div class="exp">
+      <b>¿Qué es un <nav>?</b>  
+      El bloque de navegación principal, suele contener menús, iconos o enlaces entre páginas o zonas del sitio web.
+    </div>
+  </nav>
+  <div class="exp">
+    <b>¿Qué es un <header>?</b>  
+    Se usa para toda la cabecera del documento (título principal, logo, menú de navegación, etc).
+  </div>
+</header>
+<main data-label="<main>">
+  <section data-label="<section>">
+    <h2 data-label="<h2>">¿Cómo funciona esta vista?</h2>
+    <p data-label="<p>">Cada bloque HTML relevante tiene una <b>etiqueta flotante <code>&lt;etiqueta&gt;</code></b> en la esquina. Así ves la estructura real de cualquier web.</p>
+    <div class="exp">
+      <b>¿Qué es un <section>?</b>
+      Define una subsección temática o funcional de la web. Ayuda a dividir el contenido y es clave para la accesibilidad y SEO.
+    </div>
+    <p data-label="<p>">Los colores suaves ayudan a distinguir cada nivel de anidación/tipo de bloque. Usa el inspector de tu navegador (F12) para ver el DOM real.</p>
+    <div class="tip">
+      <b>TIP:</b> Puedes usar selectores <code>body &gt; *</code>, <code>body &gt; * &gt; *</code> en tu CSS para experimentar con colores por nivel.
+    </div>
+  </section>
+  <section data-label="<section>">
+    <h2 data-label="<h2>">Tablas y agrupadores <code>thead</code>/<code>tbody</code>/<code>tfoot</code></h2>
+    <table data-label="<table>">
+      <caption>Tabla ejemplo: agrupamiento y estilos</caption>
+      <thead data-label="<thead>">
+        <tr data-label="<tr>"><th data-label="<th>">Col 1</th><th data-label="<th>">Col 2</th></tr>
+      </thead>
+      <tbody data-label="<tbody>">
+        <tr data-label="<tr>"><td data-label="<td>">Dato 1</td><td data-label="<td>">Dato 2</td></tr>
+        <tr data-label="<tr>"><td data-label="<td>">Dato 3</td><td data-label="<td>">Dato 4</td></tr>
+      </tbody>
+      <tfoot data-label="<tfoot>">
+        <tr data-label="<tr>"><td data-label="<td>" colspan="2">Pie tabla</td></tr>
+      </tfoot>
+    </table>
+    <div class="exp">
+      <b>¿Para qué sirven estos agrupadores?</b>
+      <br><b>&lt;thead&gt;</b>: cabecera de tabla, permite estilo y accesibilidad.<br>
+      <b>&lt;tbody&gt;</b>: cuerpo de la tabla, ayuda a organizar visual y semánticamente los datos.<br>
+      <b>&lt;tfoot&gt;</b>: pie, suele mostrar totales, notas, etc.
+      <br><b>TIP:</b> Úsalos para colorar o diferenciar zonas con CSS, así puedes aplicar el mismo estilo a varias tablas.
+    </div>
+  </section>
+  <article data-label="<article>">
+    <section data-label="<section>">
+      <h2 data-label="<h2>">Chuleta de propiedades y selectores</h2>
+      <table>
+        <tr><th>Propiedad/Selector</th><th>Ejemplo</th><th>¿Para qué sirve?</th></tr>
+        <tr><td><code>color</code></td><td><code>color: #349;</code></td><td>Cambia el color del texto</td></tr>
+        <tr><td><code>background, border, box-shadow</code></td>
+          <td><code>background: #fff;<br>border:2px solid #b6b;<br>box-shadow:0 0 8px #af4;</code></td>
+          <td>Fondo, borde o sombra de caja/bloque</td></tr>
+        <tr><td><code>:hover, :nth-child(n), ::before</code></td>
+          <td><code>a:hover { ... }<br>li:nth-child(odd) { ... }<br>h2::before { ... }</code></td>
+          <td>Pseudoclase y pseudoelemento para efectos y selectores avanzados</td></tr>
+        <tr><td><code>* [attr], &gt;, ~, +</code></td>
+          <td><code>* { ... }<br>input[type="text"] { ... }<br>div &gt; p { ... }<br>li + li { ... }</code></td>
+          <td>Selectores avanzados para afectar grupos de elementos o atributos</td></tr>
+        <tr><td><code>display, position, z-index</code></td>
+          <td><code>display:flex;<br>position:fixed; z-index:12;</code></td><td>Sistemas de layout, posicionamiento, superposición de capas</td></tr>
+      </table>
+      <div class="exp">
+        <b>¿Cómo estudiar esto?</b> Prueba cada selector o propiedad en un editor online (<a href="https://jsfiddle.net/" target="_blank">JSFiddle</a>, <a href="https://codepen.io/" target="_blank">CodePen</a>), y ve el efecto en directo. 
+      </div>
+    </section>
+    <aside data-label="<aside>">
+      <h3 data-label="<h3>">Glosario web útil</h3>
+      <ul>
+        <li data-label="<li>"><b>BLOQUE:</b> Ocupa todo el ancho, inicia en nueva línea (ej.: div, section, article)</li>
+        <li data-label="<li>"><b>EN LÍNEA:</b> No inicia línea nueva, solo ocupa el ancho necesario (ej.: span, a, img)</li>
+        <li data-label="<li>"><b>display:</b> Cambia cómo se comporta (block, inline, flex, grid...)</li>
+        <li data-label="<li>"><b>Pseudoelementos:</b> <code>::before</code>, <code>::after</code>: añaden contenido decorativo</li>
+        <li data-label="<li>"><b>Variables CSS:</b> <code>var(--n)</code>: valores personalizados para temas y utilidades</li>
+      </ul>
+    </aside>
+    <div class="notes">
+      <b>Practica:</b> Cambia, borra o mueve bloques para ver cómo se transforman las etiquetas visuales y los colores.
+    </div>
+  </article>
+  <section data-label="<section>">
+    <h2 data-label="<h2>">Variables y funciones modernas</h2>
+    <pre><code>:root {
+  --base: #98C4E1;
+  --sombra: 0 2px 8px #a7e6cf66;
+}
+.ejemplo-box {
+  background: var(--base);
+  box-shadow: var(--sombra);
+  font-size: clamp(1em, 2vw, 2.2em);
+  width: calc(100vw - 3em);
+}
+</code></pre>
+    <div class="exp">
+      <b>¿Por qué usar variables (<code>--nombre</code>)?</b> Te permiten cambiar todo el diseño desde un solo sitio, crear modos oscuro/claro fácilmente, y evitar repetir colores o medidas. <br>
+      <b>¿Para qué sirven <code>calc(), clamp(), min(), max()</code>?</b> Permiten diseñar layouts realmente adaptables y fluidos, sin necesidad de decenas de media-queries.
+    </div>
+  </section>
+  <section data-label="<section>">
+    <h2 data-label="<h2>">Tips visuales y prácticas</h2>
+    <ul>
+      <li>Utiliza <b>colores y esquemas suaves</b> para diferenciar bloques. Hazlo en tu propio proyecto para ver la estructura rápidamente.</li>
+      <li><b>Nunca uses sólo colores</b> para transmitir información (accesibilidad: combina color y etiquetas/descripciones).</li>
+      <li>Elige <b>display:flex/grid</b> para maquetar. Usa selectors modernos <b>:not(), :nth-child(), ::before</b> para depurar y experimentar rápido.</li>
+      <li>Consulta la <a href="https://developer.mozilla.org/es/docs/Web/CSS/Reference" target="_blank">documentación oficial de propiedades</a> para aprender detalles avanzados.</li>
+      <li>¡No dudes en copiar y pegar estos fragmentos en tus propios proyectos para analizarlos y adaptarlos!</li>
+    </ul>
+  </section>
+</main>
+<footer data-label="<footer>">
+  <p>Chuleta visual y explicada para desarrollo web. Asistente AI · <a href="https://developer.mozilla.org/es/docs/Web/CSS">Referencia CSS MDN</a></p>
+</footer>
+</body>
+</html>

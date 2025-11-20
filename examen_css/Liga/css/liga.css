@@ -1,0 +1,68 @@
+div {
+    width: 40rem;
+    background-color: rgb(255, 248, 186);
+    border: 1px solid black;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+caption {
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+    margin: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td,
+th {
+    border: 1.5px solid rgb(201, 201, 201);
+}
+
+td {
+    padding: 8px;
+}
+
+th {
+    color: white;
+    padding: 13px;
+}
+
+thead>tr {
+    background-color: rgb(50, 51, 54);
+}
+
+tbody>tr:nth-child(2n) {
+    background-color: rgb(255, 255, 255);
+}
+
+tbody>tr:nth-child(2n+1) {
+    background-color: rgb(221, 221, 221);
+}
+
+tbody>tr>td:nth-child(n+3):nth-child(-n+10) {
+    text-align: center;
+}
+
+tbody>tr:nth-child(n):nth-child(-n+4)>td:nth-child(1) {
+    background-color: rgb(159, 255, 139);
+}
+
+tbody>tr:nth-child(n+17):nth-child(-n+20)>td:nth-child(1) {
+    background-color: rgb(255, 139, 139);
+}
+
+tbody>tr>td:nth-child(2) {
+    font-weight: bold;
+}
+
+
+tbody>tr:nth-child(10)>td:nth-child(2) {
+    background-color: rgb(255, 187, 85);
+}

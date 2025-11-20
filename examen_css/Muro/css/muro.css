@@ -1,0 +1,23 @@
+img{
+    display:flex; 
+    position: absolute;
+    z-index: 1;
+    margin-top: 190px;
+    margin-left: -150px;
+    width: 1400px;
+
+}
+table{
+    display:flex;
+    position: absolute;
+    border-collapse: collapse;
+    width: 1500px;
+    margin-top: 200px;
+    margin-left: 200px;
+}
+td{
+    background-color: rgb(184, 67, 67);
+    width: 140px;
+    height: 90px;
+    border: 10px outset rgb(204, 195, 195);
+}
