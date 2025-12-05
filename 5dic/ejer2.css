@@ -1,0 +1,8 @@
+#ejer2{
+    width: 1000px;
+    height: 1000px;
+    resize: both;
+    overflow: auto;
+    background-image: url("./toroEnamorao/img/suelo.webp") ;
+    background-repeat: no-repeat;
+}

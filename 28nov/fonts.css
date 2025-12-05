@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+@font-face {
+    font-family: "vanilla pancake";
+    src: url("./vanilla_pancake/Vanilla Pancake.otf");
+}
+
+body{
+    text-align: center;
+    font-size: 30px;
+}
+p:nth-of-type(1){
+    font-family: "Playwrite US Trad Guides";
+}
+
+p:nth-of-type(2){
+    font-family: "vanilla pancake";
+}
+
+p:nth-of-type(3){
+    font-family: "Orbitron";
+}

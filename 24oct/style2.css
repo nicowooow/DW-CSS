@@ -1,3 +1,7 @@
+body p:nth-child(2){
+    font-family: "Playwrite US Trad Guides";
+}
+
 /*estilos que usan mas de uno*/
 body {
     background-image: url(https://andeangreattreks.com/wp-content/uploads/puno-titicaca-lake-by-andean-great-treks.jpg);
@@ -57,7 +61,7 @@ img {
 
 .imagen {
     position: sticky;
-    top: 10rem;
+    top: 7rem;
     z-index: 1;
 }
 
