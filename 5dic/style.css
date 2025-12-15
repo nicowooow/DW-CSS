@@ -1,5 +1,9 @@
 
-
+#ejer1{
+    display: flex;
+    gap: 20px;
+    margin-bottom: 40px;
+}
 #gmail{
     width: 100px;
     height: 100px;

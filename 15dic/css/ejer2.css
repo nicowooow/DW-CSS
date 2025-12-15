@@ -1,0 +1,20 @@
+#ejer2{
+    width: 2000px;
+    height: 300px;
+}
+
+#ejer2 img{
+    width: 200px;
+    position: absolute;
+}
+
+#ejer2 img:nth-child(1){
+    transform: translate(100%, 100%) scaleX(-1) rotate(-40deg);
+
+}
+#ejer2 img:nth-child(2){
+    transform: translate(100%, 100%) scale(1);
+}
+#ejer2 img:nth-child(3){
+    transform: scaleX(-1) ;
+}

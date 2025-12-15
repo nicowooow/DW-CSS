@@ -1,8 +1,33 @@
-#ejer2{
-    width: 1000px;
-    height: 1000px;
-    resize: both;
-    overflow: auto;
-    background-image: url("./toroEnamorao/img/suelo.webp") ;
-    background-repeat: no-repeat;
+#ejer2 {
+  resize: both;
+  overflow: auto;
+  background-color: rgb(80, 203, 255);
+  width: 80vw;
+  height: 25vw;
+  border: 2px solid black;
+}
+
+#ejer2 div {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  background: 
+  url("./toroEnamorao/img/toro.gif") no-repeat 45% 90%, /* toro centrado abajo */
+  url("./toroEnamorao/img/sol.webp") no-repeat 95% 0%,   /* esquina superior derecha */
+  url("./toroEnamorao/img/suelo.webp") repeat-x 100% 100%, /* suelo abajo */
+  url("./toroEnamorao/img/nube1.webp") no-repeat 50px 100px, /* nube1 arriba izquierda */
+  url("./toroEnamorao/img/nube2.webp") no-repeat 270px 70px,/* nube2 más centrada */
+  url("./toroEnamorao/img/nube3.webp") no-repeat 770px 90px,/* nube3 derecha */
+  url("./toroEnamorao/img/nube4.webp") no-repeat 650px 5px; /* nube4 */
+
+}
+
+#ejer2 div p {
+  position: relative;
+  text-align: left;
+  width: 200px;
+  font-size: 20px;
+  left: 20px;
+  font-family: "Lucida Handwriting";
 }

@@ -1,0 +1,7 @@
+#ejer1 p:nth-child(1){
+    transform: scale(1) skew(-30deg, 0deg);
+}
+
+#ejer1 p:nth-child(2){
+    transform: scale(1) skew(30deg, 0deg);
+}

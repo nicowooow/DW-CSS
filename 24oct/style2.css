@@ -4,8 +4,14 @@ body p:nth-child(2){
 
 /*estilos que usan mas de uno*/
 body {
-    background-image: url(https://andeangreattreks.com/wp-content/uploads/puno-titicaca-lake-by-andean-great-treks.jpg);
-    background-size: cover;
+    position: absolute;
+    z-index: 3;
+    background: 
+    url(https://cdn-icons-png.freepik.com/512/1553/1553293.png) no-repeat 7% 20%,
+    url(https://andeangreattreks.com/wp-content/uploads/puno-titicaca-lake-by-andean-great-treks.jpg)
+    ;
+
+    background-size: 100px,cover;
     /*hace que la imagen cubra toda pagina*/
     background-attachment: fixed;
     /*si cubre toda la pagina el scroll no le afecta*/
@@ -31,6 +37,7 @@ footer {
     bottom: 0;/*y este nos servira para el footer*/
     position: sticky;/*para que sean afectados por el scroll*/
     text-align: center;
+    z-index: 2;
 
 }
 header>h1,
@@ -49,6 +56,9 @@ header {
 h1 {
     filter: drop-shadow(0 0 4px white);
     font-size: 3rem;
+    position: relative;
+    z-index: 1;
+
 }
 
 img {
@@ -57,6 +67,8 @@ img {
     filter:
         drop-shadow(0 0 6px rgb(0, 0, 0)) drop-shadow(0 0 7px rgb(255, 255, 255));
     width: 12vw;
+    position: relative;
+    z-index: 1;
 }
 
 .imagen {
@@ -72,6 +84,7 @@ article>h2 {
     position: sticky;
     padding-top: 0.5rem;
     top: 4rem;
+    z-index: 1;
 }
 
 p {
@@ -79,6 +92,5 @@ p {
 }
 
 footer {
-    z-index: 2;
     background-color: darkgoldenrod;
 }

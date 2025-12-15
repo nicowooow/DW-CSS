@@ -1,0 +1,22 @@
+#ejer3{
+    display: grid;
+    grid-template-columns: repeat(2,2fr);
+    grid-template-rows: repeat(2,0.8fr);
+}
+#ejer3 img{
+    width: 500px;
+}
+
+#ejer3 div{
+    width: 500px;
+    height: 500px;
+}
+
+#ejer3 div:nth-child(3){
+    background: url("https://dww.es/css/001/res/Seleccion-M.jpg") 50% 35%;
+}
+
+#ejer3 div:nth-child(4){
+    background: url("https://dww.es/css/001/res/Seleccion-F.jpg") 98% 30%;
+
+}

@@ -1,0 +1,40 @@
+            
+            td {
+                border: 3px outset black;
+                width: 100%;
+            }
+
+            th {
+                border: 3px outset black;
+
+            }
+
+            td>img {
+                padding: 0;
+                content: none;
+            }
+
+            td {
+                width: 100px;
+                height: 60px;
+                text-align: center;
+                background-color: brown;
+            }
+
+            #img_cast {
+                padding-top: 20px;
+                padding-bottom: 20px;
+                padding-left: 2px;
+                padding-right: 2px;
+                background-color: transparent;
+                content: none;
+            }
+
+            img {
+                width: 100%;
+                object-fit: cover;
+            }
+
+            tr:nth-child(1)>td {
+                background-color: rgb(127, 127, 127);
+            }
