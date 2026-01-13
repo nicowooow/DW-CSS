@@ -5,6 +5,7 @@
 
 #ejer4 {
   border: 2px solid black;
+  border-radius: 30px;
   display: grid;
   grid-template-columns: repeat(2, 2fr);
   padding: 2rem;
@@ -13,45 +14,55 @@
   align-items: center;
   width: max-content;
 }
+
 #ejer4 img {
+  border-radius: 30px;
   object-fit: contain;
-  width: 200px;
+  width: 100%;
+  height: 100%;
   filter: drop-shadow(0px 0px 3px rgb(11, 255, 255));
   display: flex;
+  position: relative;
   z-index: 0;
-}
 
-#ejer4 div:active {
-  z-index: 1;
+}
+#ejer4 img:active {
+  position: relative;
+  z-index: 5;
+
 }
 
 #ejer4 div:nth-child(1) img {
-  transition: all 0.5s ease;
-}
-#ejer4 div:nth-child(2) img {
-  transition: all 0.5s ease-in;
-}
-#ejer4 div:nth-child(3) img {
-  transition: all 0.5s ease-out;
-}
-#ejer4 div:nth-child(4) img {
-  transition: all 0.5s cubic-bezier(0.4, -.5, 0.3,1);
+  transition: all 0.5s ease-in-out;
 }
 
 #ejer4 div:nth-child(1) img:active {
-    transform: translate(50%, 50%) scale(2.5) skew(10deg, 20deg);
+  transform: translate(56%, 55%) scale(2.3) rotate3d(1, 0, 0, 360deg);
+  /*  skew(10deg, 20deg) rotateX(150deg) rotateY(150deg) */
+}
 
+#ejer4 div:nth-child(2) img {
+  transition: all 0.8s ease-in;
 }
 #ejer4 div:nth-child(2) img:active {
-  transform: translate(-80%, 50%) scale(2.5) rotate3d(1, 1, 1, 360deg);
+  transform: translate(-54%, 54%) scale(2.1) rotate3d(1, 1, 1, 360deg)
+    rotate3d(0, 1, 0, 360deg);
   /* en rotate3d tenemos 1, 1, 1, 360deg los cuales toman el valor de rotación,
     el primer 1 es el eje X, el segundo 1 es el eje Y, el tercero 1 es el eje Z y 360deg es el grado de rotación */
 }
+
+#ejer4 div:nth-child(3) img {
+  transition: all 0.5s cubic-bezier(0.9, -0.8, 0.3, 0.8);
+}
 #ejer4 div:nth-child(3) img:active {
-  transform: translate(80%, -100%) rotate(360deg) scale(2.5);
+  transform: translate(54%, -56%) rotate(360deg) scale(2.1);
+}
+
+#ejer4 div:nth-child(4) img {
+  transition: all 0.5s ease-out;
 }
 #ejer4 div:nth-child(4) img:active {
-  transform: translate(-80%, -50%) rotateY(360deg) scale(2.5);
+  transform: translate(-56%, -56%) rotate3d(0, 0, 1, 360deg) scale(2.1);
 }
 
 .jumpscare {
