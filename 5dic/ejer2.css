@@ -5,6 +5,8 @@
   width: 80vw;
   height: 25vw;
   border: 2px solid black;
+    overflow-y: hidden;
+
 }
 
 #ejer2 div {
@@ -14,12 +16,12 @@
 
   background: 
   url("./toroEnamorao/img/toro.gif") no-repeat 45% 90%, /* toro centrado abajo */
-  url("./toroEnamorao/img/sol.webp") no-repeat 95% 0%,   /* esquina superior derecha */
   url("./toroEnamorao/img/suelo.webp") repeat-x 100% 100%, /* suelo abajo */
   url("./toroEnamorao/img/nube1.webp") no-repeat 50px 100px, /* nube1 arriba izquierda */
   url("./toroEnamorao/img/nube2.webp") no-repeat 270px 70px,/* nube2 más centrada */
   url("./toroEnamorao/img/nube3.webp") no-repeat 770px 90px,/* nube3 derecha */
-  url("./toroEnamorao/img/nube4.webp") no-repeat 650px 5px; /* nube4 */
+  url("./toroEnamorao/img/nube4.webp") no-repeat 650px 5px, /* nube4 */
+  url("./toroEnamorao/img/sol.webp") no-repeat 95% 0%;   /* esquina superior derecha */
 
 }
 

@@ -1,0 +1,78 @@
+body {
+  margin: 2rem;
+  background-color: #dfceb2;
+  font-family: "Times New Roman", serif;
+  color: #000;
+}
+
+h2 {
+  font-size: 36px;
+  text-shadow: 0px 0px 4px #6500b8;
+  text-decoration: underline;
+  text-decoration-color: #f06eff;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  /* object-fit: contain; */
+  /* width: 200px; */
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.code {
+  color: #00aa00;
+  font-family: "Courier New", monospace;
+}
+
+.em {
+  font-style: italic;
+}
+/* el nowrap  Evita que el texto haga saltos de línea automáticos. */
+.nowrap {
+  white-space: nowrap;
+}
+/* pre  El texto respeta todos los espacios en blanco y saltos de línea tal como están en el código fuente. */
+.pre {
+  white-space: pre;
+}
+ /* prewarp  Combina el comportamiento de pre con el ajuste automático de línea. */
+.prewrap {
+  white-space: pre-wrap;
+}
+
+/* preline  Combina el comportamiento de espacios en blanco colapsados con el respeto a los saltos de línea. */
+.preline {
+  white-space: pre-line;
+}
+
+.start{
+  text-align: start;
+}
+
+.end{
+  text-align: end;
+}
+
+.center{
+  text-align: center;
+}
+.justify{
+  text-align: justify;
+}
+
+.left{
+  text-align: left;
+}
+
+.right{
+  text-align: right;
+}
+
+.letter_spacing{
+  letter-spacing: 2px;
+}
+
+.word_spacing{
+  word-spacing: 5px;
+}

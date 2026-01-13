@@ -1,0 +1,35 @@
+#ejer3 menu {
+  background-color: rgb(167, 255, 202);
+  border: 2px solid black;
+  padding: 10px;
+  list-style: none;
+  display: inline-block;
+  height: 1rem;
+  overflow: hidden;
+  transition: height ease-in-out 1s;
+}
+#ejer3 menu:hover {
+  background-color: lightgrey;
+  height: auto;
+  transition: height ease-in-out 1s;
+}
+#ejer3 menu li:hover:not(:first-child) {
+  background-color: rgb(147, 147, 147);
+}
+
+#ejer3 menu li {
+  position: relative;
+  font-size: 1.2rem;
+}
+#ejer3 menu li:not(:first-child) {
+  position: relative;
+  padding: 5px 20px;
+}
+
+#ejer3 menu li a {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  color: darkblue;
+}
+

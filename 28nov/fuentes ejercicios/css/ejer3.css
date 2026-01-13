@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+  background-color: #cab7a1;
+  display: flex;
+  justify-content: center;
+  font-family: "Handlee", cursive;
+}
+
+.pagina {
+  width: 600px;
+  padding: 40px;
+  position: relative;
+  text-align: center;
+  color: #2b1b12;
+  justify-items: center;
+}
+
+h1 {
+  font-family: "Great Vibes", cursive;
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-family: "Great Vibes", cursive;
+  font-size: 36px;
+  margin: 10px 0 20px;
+}
+
+hr {
+  width: 60%;
+  border: none;
+  border-top: 1px solid #2b1b12;
+  margin: 20px auto;
+}
+
+.poema {
+  font-size: 20px;
+  line-height: 1.6;
+  white-space: pre-line;
+  display: block;
+  width: 80%;
+  justify-self: center;
+}
+
+.sello {
+  position: fixed;
+  top: 120px;
+  right: 30px;
+  width: 120px;
+  opacity: 0.9;
+  filter: sepia(90%);
+}

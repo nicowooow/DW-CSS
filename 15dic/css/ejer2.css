@@ -1,6 +1,7 @@
 #ejer2{
     width: 2000px;
     height: 300px;
+    scroll-behavior: smooth;
 }
 
 #ejer2 img{
@@ -9,12 +10,14 @@
 }
 
 #ejer2 img:nth-child(1){
-    transform: translate(0%, 0%) scaleX(-1) rotate(-40deg);
+    /* object-fit: contain; */
+    /* esto no se porque no funciona pero asi esta */
+    transform: translate(0%, 0%) scaleX(-0.3) scaleY(0.4) rotate(-40deg);
 
 }
 #ejer2 img:nth-child(2){
-    transform: translate(30%, 120%) scaleX(-1) rotate(-90deg) ;
+    transform: translate(30%, 100%) scaleX(-1) rotate(-90deg) ;
 }
 #ejer2 img:nth-child(3){
-    transform: translate(00%, 120%) scale(1);
+    transform: translate(00%, 100%) scale(1);
 }
