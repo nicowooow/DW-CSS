@@ -6,39 +6,114 @@
     <title>transiciones</title>
     <link rel="stylesheet" href="css/ejer1.css" />
     <link rel="stylesheet" href="css/ejer3.css" />
-    <link rel="stylesheet" href="css/ejer2.css" />
+    <link rel="stylesheet" href="css/ejer4.css" />
     <link rel="stylesheet" href="css/ejer2.css" />
     <link rel="stylesheet" href="css/ejer2.css" />
   </head>
   <body>
     <div id="ejer1">
       <p>
-        Un "texto random" o <b>texto aleatorio</b> es contenido de relleno (como el
-        famoso Lorem Ipsum) que se usa en <b>diseño gráfico y web</b> para
-        previsualizar una maquetación antes de tener el <b>texto final</b>, simulando
-        la <b>apariencia de un documento real</b> sin distraer con el significado, y en
-        <b>Microsoft Word</b> se genera fácilmente con la fórmula
+        Un "texto random" o <b>texto aleatorio</b> es contenido de relleno (como
+        el famoso Lorem Ipsum) que se usa en <b>diseño gráfico y web</b> para
+        previsualizar una maquetación antes de tener el <b>texto final</b>,
+        simulando la <b>apariencia de un documento real</b> sin distraer con el
+        significado, y en <b>Microsoft Word</b> se genera fácilmente con la
+        fórmula
       </p>
-
     </div>
 
     <div id="ejer3">
-        <h3>Algunas propiedades CSS</h3>
-        <menu>
+      <h3>Algunas propiedades CSS</h3>
+      <menu>
         <li><b>CSS</b></li>
-        <li><a href="https://www.w3schools.com/tags/att_height.asp">height</a></li>
-        <li><a href="https://www.w3schools.com/tags/att_width.asp">width</a></li>
-        <li><a href="https://www.w3schools.com/css/css_overflow.asp">overflow</a></li>
-        <li><a href="https://www.w3schools.com/tags/att_height.asp">height</a></li>
-        <li><a href="https://www.w3schools.com/cssref/pr_list-style-type.php">list-style-type</a></li>
-        <li><a href="https://www.w3schools.com/css/css_background.asp">background</a></li>
-        <li><a href="https://www.w3schools.com/CSSref/pr_text_color.php">color</a></li>
-        <li><a href="https://www.w3schools.com/cssref/css3_pr_transition.php">transition</a></li>
-        <li><a href="https://www.w3schools.com/css/css_padding.asp">padding</a></li>
-        <li><a href="https://www.w3schools.com/css/css_margin.asp">margin</a></li>
-        <li><a href="https://www.w3schools.com/cssref/pr_text_text-decoration.php">text-decoration</a></li>
-        <li><a href="https://www.w3schools.com/cssref/pr_class_display.php">display</a></li>
-        </menu>
+        <li>
+          <a href="https://www.w3schools.com/tags/att_height.asp">height</a>
+        </li>
+        <li>
+          <a href="https://www.w3schools.com/tags/att_width.asp">width</a>
+        </li>
+        <li>
+          <a href="https://www.w3schools.com/css/css_overflow.asp">overflow</a>
+        </li>
+        <li>
+          <a href="https://www.w3schools.com/tags/att_height.asp">height</a>
+        </li>
+        <li>
+          <a href="https://www.w3schools.com/cssref/pr_list-style-type.php"
+            >list-style-type</a
+          >
+        </li>
+        <li>
+          <a href="https://www.w3schools.com/css/css_background.asp"
+            >background</a
+          >
+        </li>
+        <li>
+          <a href="https://www.w3schools.com/CSSref/pr_text_color.php">color</a>
+        </li>
+        <li>
+          <a href="https://www.w3schools.com/cssref/css3_pr_transition.php"
+            >transition</a
+          >
+        </li>
+        <li>
+          <a href="https://www.w3schools.com/css/css_padding.asp">padding</a>
+        </li>
+        <li>
+          <a href="https://www.w3schools.com/css/css_margin.asp">margin</a>
+        </li>
+        <li>
+          <a href="https://www.w3schools.com/cssref/pr_text_text-decoration.php"
+            >text-decoration</a
+          >
+        </li>
+        <li>
+          <a href="https://www.w3schools.com/cssref/pr_class_display.php"
+            >display</a
+          >
+        </li>
+      </menu>
     </div>
+
+    <div id="ejer4">
+      <div>
+        <img src="https://nicowooow.site/public/GitHub.webp" alt="GitHub" />
+      </div>
+      <div>
+        <img src="https://nicowooow.site/public/Java.webp" alt="Java" />
+      </div>
+      <div>
+        <img src="https://nicowooow.site/public/PHP.webp" alt="PHP" />
+      </div>
+      <div>
+        <img
+          src="https://nicowooow.site/public/html5-css3.webp"
+          alt="HTML5/CSS3"
+        />
+      </div>
+    </div>
+    <audio src="./audio/FNAF 2_ Marionette The Puppet Jumpscare.mp3"></audio>
+    <img
+      class="jumpscare"
+      src="https://i.pinimg.com/originals/f6/6a/61/f66a61bfae837a3a357a920030e1eab5.gif"
+      alt="jumpscare"
+    />
+    <button>clickeame</button>
+    <script>
+      let button = document.querySelector("button");
+      let jumpscare = document.querySelector(".jumpscare");
+      let audio = document.querySelector("audio");
+
+      button.addEventListener("click", () => {
+        audio.currentTime = 21;
+        audio.play();
+        setTimeout(() => {
+          jumpscare.style.display = "block";
+          setTimeout(() => {
+            jumpscare.style.display = "none";
+          }, 1000);
+        }, 9500);
+      });
+    </script>
   </body>
 </html>

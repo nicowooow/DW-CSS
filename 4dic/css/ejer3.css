@@ -5,14 +5,15 @@
   list-style: none;
   display: inline-block;
   height: 1rem;
-  overflow: hidden;
-  transition: height ease-in-out 1s;
+  overflow: hidden; /*para que se oculte el contenido*/
+  transition: height ease-in-out .6s,background-color ease-in-out .4s;
 }
 #ejer3 menu:hover {
   background-color: lightgrey;
-  height: auto;
-  transition: height ease-in-out 1s;
+  height: 25rem;
+  transition: height ease-in-out .6s,background-color ease-in-out .4s;
 }
+/* para hacerlo es necesario poner las alturas en valores idedenticos (sistema de medicion) */
 #ejer3 menu li:hover:not(:first-child) {
   background-color: rgb(147, 147, 147);
 }

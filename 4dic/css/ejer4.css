@@ -1,0 +1,74 @@
+@font-face {
+  font-family: "Five Fonts at Freddy's";
+  src: url("./../font/FiveFontsatFreddy's-Regular.ttf");
+}
+
+#ejer4 {
+  border: 2px solid black;
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  padding: 2rem;
+  gap: 20px;
+  justify-items: center;
+  align-items: center;
+  width: max-content;
+}
+#ejer4 img {
+  object-fit: contain;
+  width: 200px;
+  filter: drop-shadow(0px 0px 3px rgb(11, 255, 255));
+  display: flex;
+  z-index: 0;
+}
+
+#ejer4 div:active {
+  z-index: 1;
+}
+
+#ejer4 div:nth-child(1) img {
+  transition: all 0.5s ease;
+}
+#ejer4 div:nth-child(2) img {
+  transition: all 0.5s ease-in;
+}
+#ejer4 div:nth-child(3) img {
+  transition: all 0.5s ease-out;
+}
+#ejer4 div:nth-child(4) img {
+  transition: all 0.5s cubic-bezier(0.4, -.5, 0.3,1);
+}
+
+#ejer4 div:nth-child(1) img:active {
+    transform: translate(50%, 50%) scale(2.5) skew(10deg, 20deg);
+
+}
+#ejer4 div:nth-child(2) img:active {
+  transform: translate(-80%, 50%) scale(2.5) rotate3d(1, 1, 1, 360deg);
+  /* en rotate3d tenemos 1, 1, 1, 360deg los cuales toman el valor de rotación,
+    el primer 1 es el eje X, el segundo 1 es el eje Y, el tercero 1 es el eje Z y 360deg es el grado de rotación */
+}
+#ejer4 div:nth-child(3) img:active {
+  transform: translate(80%, -100%) rotate(360deg) scale(2.5);
+}
+#ejer4 div:nth-child(4) img:active {
+  transform: translate(-80%, -50%) rotateY(360deg) scale(2.5);
+}
+
+.jumpscare {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  display: none;
+  z-index: 10;
+}
+button {
+  width: 200px;
+  height: 50px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  font-family: "Five Fonts at Freddy's";
+  background-color: black;
+  color: red;
+}
