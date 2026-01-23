@@ -1,0 +1,108 @@
+#ejer3 {
+  display: grid;
+  justify-content: center;
+}
+#caja {
+  width: 15rem;
+  height: 34rem;
+  background: rgb(124, 61, 12);
+  position: relative;
+  display: grid;
+  justify-items: center;
+}
+#reloj {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  background: white;
+  position: absolute;
+  top: 4%;
+  z-index: 1;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+#centro {
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  background-color: black;
+  border-radius: 50%;
+  z-index: 2;
+}
+#minuto {
+  position: absolute;
+  width: 0.3rem;
+  height: 2rem;
+  background-color: brown;
+  transform-origin: 50% 0%;
+  top: 50%;
+  z-index: 1;
+  animation: minuto 720s infinite steps(12); 
+}
+#segundo {
+  position: absolute;
+  width: 0.2rem;
+  height: 3rem;
+  background-color: aqua;
+  transform-origin: 50% 0%;
+  top: 50%;
+
+  animation: segundo 60s infinite steps(60);
+}
+
+#pendulo {
+  display: grid;
+  justify-items: center;
+  transform-origin: 50% 30%;
+  animation: pendulo 3s ease-in-out infinite reverse;
+  border-radius: 30px;
+}
+#palo {
+  width: 0.4rem;
+  height: 10rem;
+  background-color: yellow;
+
+  position: absolute;
+  top: 32%;
+}
+#bola {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: linear-gradient(90deg, rgb(123, 115, 59), yellow);
+  position: absolute;
+  top: 60%;
+}
+
+@keyframes pendulo {
+  0% {
+    transform: rotate(18deg);
+  }
+  50% {
+    transform: rotate(-18deg);
+  }
+  100% {
+    transform: rotate(18deg);
+  }
+}
+
+@keyframes segundo {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes minuto {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

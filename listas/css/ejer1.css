@@ -1,0 +1,25 @@
+#ejer1 {
+  tbody {
+    counter-reset: filas 1;
+  }
+  tr:nth-child(n + 2) td:first-child::before {
+      color: red;
+      content: counter(filas) ". ";
+      counter-increment: filas;
+  }
+
+  /* estilos previos */
+  table {
+    border-collapse: collapse;
+  }
+  td,
+  th {
+    border: 1px solid;
+    padding: 3px 6px;
+  }
+  td:nth-child(2),
+  td:nth-child(3),
+  td:nth-child(4) {
+    text-align: right;
+  }
+}
