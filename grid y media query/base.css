@@ -1,0 +1,84 @@
+body {
+  margin: 0;
+  height: 100vh;
+  color: white;
+  padding: 3rem;
+} /**/
+
+/* ===> Contenedor grid <=== */
+.grid {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 100px 1fr 100px;
+
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+
+  gap: 5px 8px;
+}
+header {
+  background-color: #656e94;
+}
+aside,
+main,
+footer {
+  background-color: #425da8;
+}
+
+header {
+  grid-area: header;
+}
+aside {
+  grid-area: sidebar;
+}
+main {
+  grid-area: main;
+}
+footer {
+  grid-area: footer;
+}
+/* Si lo crees necesario por las dimensiones de
+   tu monitor, puedes ajustar los tamaños */
+@media (width <= 500px) {
+  .grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 300px repeat(2, 100px);
+
+    grid-template-areas:
+      "header"
+      "sidebar"
+      "main"
+      "footer";
+  }
+}
+@media (width >= 800px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+
+    grid-template-areas:
+      "header header header"
+      "sidebar main footer";
+  }
+}
+@media (width >= 1000px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+
+    grid-template-areas:
+      "sidebar header footer"
+      "main main main";
+  }
+}
+@media (width >= 1100px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+
+    grid-template-areas: "header sidebar main footer";
+  }
+}
