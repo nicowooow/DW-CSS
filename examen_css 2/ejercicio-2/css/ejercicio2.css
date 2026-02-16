@@ -1,0 +1,49 @@
+#ejer2 {
+	position: relative;
+	height: 15rem;
+	width: 100%;
+	display: grid;
+	grid-template-rows: repeat(9, 1fr);
+}
+
+#ejer2 > div {
+	width: 100%;
+	transition: all 2s linear;
+}
+
+#ejer2 div:nth-child(2n + 1) {
+	background-color: yellow;
+}
+#ejer2 div:nth-child(2n) {
+	background-color: red;
+}
+
+#logo {
+	position: absolute;
+	width: 3rem;
+	right: 10%;
+	top: 10%;
+	opacity: 0;
+	transition: opacity 2s linear;
+}
+
+@media (max-width: 600px) {
+	#logo {
+		opacity: 1;
+		transition: opacity 2s linear;
+	}
+
+	#ejer2 {
+		grid-template-columns: repeat(9, 1fr);
+	}
+	#ejer2 div {
+		height: 15rem;
+		transition: all 2s linear;
+	}
+	#ejer2 div:nth-child(2n + 1) {
+		background-color: blue;
+	}
+	#ejer2 div:nth-child(2n) {
+		background-color: magenta;
+	}
+}

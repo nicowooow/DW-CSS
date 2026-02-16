@@ -1,0 +1,56 @@
+@font-face {
+	font-family: "Oleo-Script";
+	src: url("./../font/OleoScriptSwashCaps-Regular.ttf");
+}
+
+#ejer3 {
+	background-color: rgb(255, 240, 25);
+	border: 1px solid black;
+	padding: 3rem;
+	display: inline-flex;
+	gap: 2.5rem;
+	height: 20rem;
+}
+details {
+	height: 1rem;
+	transition: height 0.1s steps(1);
+}
+details:open {
+	height: 20rem;
+	transition: height 0.1s steps(1);
+}
+
+summary {
+	font-family: "Oleo-Script", cursive;
+	background-color: rgb(255, 240, 25);
+	font-size: 1.8rem;
+}
+
+/* sacar las imagenes que tiene cada detail */
+/* segun el enunciado dice como sprites, y yo entiendo que poner el background como fondo se considera un sprite 
+entonces si esta bien lo que hice, pero si fuera poner un div dentro de details seria muy distinto 
+esta haciendo con keyframe, pero no se si eso pedia porque eso era otra forma, creo que mas facil de hacerlo*/
+details:nth-child(1) {
+	background-image: url("./../img/baraja.png");
+	background-repeat: no-repeat;
+	background-size: 90rem 80rem;
+	background-position: 0% -5%;
+}
+details:nth-child(2) {
+	background-image: url("./../img/baraja.png");
+	background-repeat: no-repeat;
+	background-size: 92rem 80rem;
+	background-position: 10.6% 30%;
+}
+details:nth-child(3) {
+	background-image: url("./../img/baraja.png");
+	background-repeat: no-repeat;
+	background-size: 100rem 80rem;
+	background-position: 22% 65%;
+}
+details:nth-child(4) {
+	background-image: url("./../img/baraja.png");
+	background-repeat: no-repeat;
+	background-size: 90rem 80rem;
+	background-position: 33% 99%;
+}

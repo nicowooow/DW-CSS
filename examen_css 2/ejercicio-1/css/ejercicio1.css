@@ -1,0 +1,33 @@
+#ejer1 {
+	background-image:url("../img/paisaje.png");
+	background-size: cover;
+	position: fixed;
+	overflow: hidden;
+	width: 70rem;
+	height: 50rem;
+}
+
+#aguila {
+	position: absolute;
+	animation: vuelo 10s linear infinite;
+}
+#arbol{
+    position: relative;
+    z-index: 1;
+    bottom: 0;
+	width: 90%;
+	height: 100%;
+}
+
+@keyframes vuelo {
+	from {
+        width: 15rem;
+		top: 70%;
+		left: -40%;
+	}
+	to {
+        width: 0rem;
+		top: 0%;
+		left: 120%;
+	}
+}
